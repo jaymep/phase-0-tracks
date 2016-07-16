@@ -19,4 +19,7 @@
 * What is a merge conflict?
   * When the merging branch and destination branch have both been modified.
 
+<<<<<<< HEAD
   #### Small Change
+=======
+>>>>>>> ad16c33ca2dc84c0d969d27cb1cbca52214a14f0
