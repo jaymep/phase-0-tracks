@@ -1,0 +1,28 @@
+/*-- Selecting an ID --*/
+
+#contact-info {
+  font-size: .8em;
+}
+
+/*-- Selecting a class --*/
+
+.job {
+  background-color: #e9e5dc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+/*-- Select a child element (used it early!) --*/
+
+ul li {
+  font-size: .8em;
+}
+
+/*-- Pseudoselector --*/
+
+.experience-category::first-letter {
+  font-size: 2em;
+}
+
+/*-- Select a child element (See line 18) --*/
