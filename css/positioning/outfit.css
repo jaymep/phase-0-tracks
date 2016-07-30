@@ -1,14 +1,22 @@
-/* octopus */
-img:nth-child(1) {
-
+/* align images */
+img {
+  display: block;
+  margin: 0px auto;
 }
 
 /* hat */
-img:nth-child(2) {
-
+img:nth-child(1) {
+  position: relative;
 }
 
 /* glasses */
-img:nth-child(3) {
+img:nth-child(2) {
+  position: relative;
+}
 
+/* octopus */
+img:nth-child(3) {
+  position: relative;
+  margin-top: -157px;
+  z-index: -1;
 }
