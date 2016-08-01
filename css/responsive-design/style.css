@@ -1,7 +1,17 @@
+body {
+  max-width: 960px;
+  min-width: 500px;
+  margin: 0px auto;
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
   margin-left: 0px;
+}
+
+span {
+  display: inline;
 }
 
 cite {
@@ -9,9 +19,31 @@ cite {
   margin-top: 10px;
 }
 
+#external-links {
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+  border: 1px solid black;
+  padding-left: 10px;
+}
+
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
+}
+
+#external-links ul li{
+  padding: 5px;
+}
+
+/* 
+  740 px is the correct width for main on my (JW) 
+  screen for the display and vertical align 
+  properties to work correctly
+*/
+main {
+  display: inline-block;
+  width: 70%; 
 }
 
 /* you're welcome to edit the
@@ -30,3 +62,28 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #external-links {
+    display: block;
+    width: 90%;
+  }
+  main {
+    display: block;
+    width: 90%; 
+  }
+}
+
+/*
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+*/
