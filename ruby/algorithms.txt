@@ -1,0 +1,15 @@
+determine [current floor number]
+determine [desired floor number]
+if [current floor number] is less than [desired floor number]
+  push up button
+else
+  push down button
+wait for elevator doors to open
+walk into elevator
+turn 180 degrees
+push the button that corresponds to [desired floor number]
+wait for elevator doors to close
+wait for elevator to reach [desired floor number]
+wait for elevator doors to open
+walk out of elevator
+
