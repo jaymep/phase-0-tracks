@@ -61,6 +61,7 @@ end
 
 
 # In addition to the other questions in the survey, use a loop to ask the employee to name any allergies, one at a time. The employee can type “done” when finished.
+=begin
 puts('What are you allergic to? (Enter one allergy at a time, then 'done' when finished)')
 allergy = gets.chomp
 until allergy = 'done'
@@ -70,6 +71,8 @@ until allergy = 'done'
     status = 'Probably a vampire'
   end
 end
+=end
+
 
 
 # As long as the allergy is not “sunshine,” continue the loop for as long as is needed. If at any point the employee lists “sunshine” as an allergy, skip directly to the result of “Probably a vampire.”
