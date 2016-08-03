@@ -1,3 +1,5 @@
+#elevator
+
 determine [current floor number]
 determine [desired floor number]
 if [current floor number] is less than [desired floor number]
@@ -13,3 +15,15 @@ wait for elevator to reach [desired floor number]
 wait for elevator doors to open
 walk out of elevator
 
+#
+
+#fold fitted sheet
+
+pick up fitted sheet
+locate corners created by seams
+fold:
+  determine longer side
+  bring together corners on longer side
+  bring together corners on opposite longer side
+bring elastic edges to one side of sheet
+repeat fold three times or until no longer able
