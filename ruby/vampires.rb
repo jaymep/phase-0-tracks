@@ -36,11 +36,11 @@ if age == real_age && ( garlic || insurance)
   status = 'Probably a not a vampire'
 
 # If the employee got their age wrong, and hates garlic bread or waives insurance, the result is “Probably a vampire.”
-if !(age == real_age) && !(garlic || insurance)
+if !(age == real_age) && (!garlic || !insurance)
   status = 'Probably a vampire'
 
 # If the employee got their age wrong, hates garlic bread, and doesn’t want insurance, the result is “Almost certainly a vampire.”
-if !(age == real_age) && !(garlic && insurance)
+if !(age == real_age) && (!garlic && !insurance)
   status = 'Almost certainly a vampire'
 
 # Even if the employee is an amazing liar otherwise, anyone going by the name of “Drake Cula” or “Tu Fang” is clearly a vampire, because come on. In that case, you should print “Definitely a vampire.”
@@ -55,7 +55,9 @@ else
 print('Employee Status ' + status)
 
 # In addition to the other questions in the survey, use a loop to ask the employee to name any allergies, one at a time. The employee can type “done” when finished.
-
+puts('What are you allergic to? (Enter 'done' when finished)')
+allergy = gets.chomp
+until allergy = 'done'
 
 
 # As long as the allergy is not “sunshine,” continue the loop for as long as is needed. If at any point the employee lists “sunshine” as an allergy, skip directly to the result of “Probably a vampire.”
