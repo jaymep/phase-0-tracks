@@ -1,0 +1,42 @@
+#elevator_robot
+determine [current floor number]
+determine [desired floor number]
+if [current floor number] is less than [desired floor number]
+  push up button
+else
+  push down button
+wait for elevator doors to open
+walk into elevator
+turn 180 degrees
+push the button that corresponds to [desired floor number]
+wait for elevator doors to close
+wait for elevator to reach [desired floor number]
+wait for elevator doors to open
+walk out of elevator
+
+#sunny_side_up_egg
+set frying pan on stove burner
+turn stove burner to medium heat
+add oil to frying pan
+crack open egg
+put egg white and egg yolk into frying pan
+discard eggshell
+until egg white is solid
+  put lid on frying pan
+  wait three minutes
+  remove lid from frying pan
+if egg white is solid
+  remove egg from pan
+  place egg on plate
+  add salt to egg
+  add pepper to egg
+
+#fold_fitted_sheet
+pick up fitted sheet
+locate corners created by seams
+fold:
+  determine longer side
+  bring together corners on longer side
+  bring together corners on opposite longer side
+bring elastic edges to one side of sheet
+repeat fold three times or until no longer able
