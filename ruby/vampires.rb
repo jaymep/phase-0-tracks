@@ -41,18 +41,22 @@ end
 # If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
 if age == real_age && ( garlic || insurance)
   status = 'Probably a not a vampire'
+end
 
 # If the employee got their age wrong, and hates garlic bread or waives insurance, the result is “Probably a vampire.”
 if !(age == real_age) && (!garlic || !insurance)
   status = 'Probably a vampire'
+end
 
 # If the employee got their age wrong, hates garlic bread, and doesn’t want insurance, the result is “Almost certainly a vampire.”
 if !(age == real_age) && (!garlic && !insurance)
   status = 'Almost certainly a vampire'
+end
 
 # Even if the employee is an amazing liar otherwise, anyone going by the name of “Drake Cula” or “Tu Fang” is clearly a vampire, because come on. In that case, you should print “Definitely a vampire.”
 if name == 'Drake Cula' || name == 'Tu Fang'
   status = '“Definitely a vampire'
+end
 
 # Otherwise, print “Results inconclusive.”
 else
