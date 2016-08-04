@@ -61,17 +61,24 @@ end
 
 
 # In addition to the other questions in the survey, use a loop to ask the employee to name any allergies, one at a time. The employee can type “done” when finished.
-=begin
-puts('What are you allergic to? (Enter one allergy at a time, then 'done' when finished)')
-allergy = gets.chomp
-until allergy = 'done'
-  puts('What are you allergic to? (Enter one allergy at a time, then 'done' when finished)')
+allergies = Array.new
+allergy = NIL
+# status = 'Probably a not a vampire' (Necessary when testing snippet)
+
+until allergy == 'done'
+  puts("What are you allergic to? (Enter one allergy at a time, then 'done' when finished)")
   allergy = gets.chomp
-  if allergy = 'sunshine'
-    status = 'Probably a vampire'
-  end
+  allergies << allergy
+  break if allergy == 'sunshine'
 end
-=end
+
+puts allergies
+
+if allergies.include? 'sunshine'
+  status = 'Probably a vampire'
+else
+  status = 'Probably a not a vampire'
+end
 
 
 
