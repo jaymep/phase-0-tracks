@@ -36,28 +36,22 @@ else
   insurance = FALSE
 end
 
-# If all conditionals == FALSE: 
+# If all conditionals == false/beginning status
+status = 'Results inconclusive'
 
-
-# If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
-# If the employee got their age wrong, and hates garlic bread or waives insurance, the result is “Probably a vampire.”
-# If the employee got their age wrong, hates garlic bread, and doesn’t want insurance, the result is “Almost certainly a vampire.”
-# Even if the employee is an amazing liar otherwise, anyone going by the name of “Drake Cula” or “Tu Fang” is clearly a vampire, because come on. In that case, you should print “Definitely a vampire.”
-
-case
-  when age == real_age && ( garlic || insurance)
-    status = 'Probably a not a vampire'
-  when !(age == real_age) && (!garlic || !insurance)
-    status = 'Probably a vampire'
-  when !(age == real_age) && (!garlic && !insurance)
-    status = 'Almost certainly a vampire'
-  when name == 'Drake Cula' || name == 'Tu Fang'
-    status = 'Definitely a vampire'
-  else
-    status = 'Results inconclusive'
+if age == real_age && ( garlic || insurance)
+  status = 'Probably a not a vampire'
+end
+if !(age == real_age) && (!garlic || !insurance)
+  status = 'Probably a vampire'
+end
+if !(age == real_age) && (!garlic && !insurance)
+  status = 'Almost certainly a vampire'
+end
+if name == 'Drake Cula' || name == 'Tu Fang'
+  status = 'Definitely a vampire'
 end
 
-# move 'Results inconclusive' to top as starting status?
 
 # Check for sunshine allergy
 
@@ -81,7 +75,7 @@ else
 end
 
 # Print the result at the end of the survey.
-print('Employee Status: ' + status)
+puts('Employee Status: ' + status)
 
 # End employee survey loop here
 
