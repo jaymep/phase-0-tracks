@@ -17,53 +17,47 @@ puts("What year were you born?")
 birth_year = gets.chomp
 birth_year = birth_year.to_i
 current_year = Time.now.year
-current_year =  current_year.to_i
+current_year = current_year.to_i
 real_age = current_year - birth_year
 
-puts("Our company cafeteria serves garlic bread. Should we order some for you? (Y/N)")
+puts("Our company cafeteria serves garlic bread. Should we order some for you? (y/n)")
 garlic = gets.chomp
-if garlic = 'Y'
-  garlic =  TRUE
+if garlic == 'y'
+  garlic = TRUE
 else
   garlic = FALSE
 end
 
-puts("Would you like to enroll in the company’s health insurance? (Y/N)")
+puts("Would you like to enroll in the company’s health insurance? (y/n)")
 insurance = gets.chomp
-if insurance = 'Y'
-  insurance =  TRUE
+if insurance == 'y'
+  insurance = TRUE
 else
   insurance = FALSE
 end
 
 # If all conditionals == FALSE: 
-status = 'Results inconclusive'
+
 
 # If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
-
-if age == real_age && ( garlic || insurance)
-  status = 'Probably a not a vampire'
-end
-
 # If the employee got their age wrong, and hates garlic bread or waives insurance, the result is “Probably a vampire.”
-
-if !(age == real_age) && (!garlic || !insurance)
-  status = 'Probably a vampire'
-end
-
 # If the employee got their age wrong, hates garlic bread, and doesn’t want insurance, the result is “Almost certainly a vampire.”
-
-if !(age == real_age) && (!garlic && !insurance)
-  status = 'Almost certainly a vampire'
-end
-
 # Even if the employee is an amazing liar otherwise, anyone going by the name of “Drake Cula” or “Tu Fang” is clearly a vampire, because come on. In that case, you should print “Definitely a vampire.”
 
-if name == 'Drake Cula' || name == 'Tu Fang'
-  status = '“Definitely a vampire'
+case
+  when age == real_age && ( garlic || insurance)
+    status = 'Probably a not a vampire'
+  when !(age == real_age) && (!garlic || !insurance)
+    status = 'Probably a vampire'
+  when !(age == real_age) && (!garlic && !insurance)
+    status = 'Almost certainly a vampire'
+  when name == 'Drake Cula' || name == 'Tu Fang'
+    status = 'Definitely a vampire'
+  else
+    status = 'Results inconclusive'
 end
 
-# move 'Results inconclusive' to top as starting status
+# move 'Results inconclusive' to top as starting status?
 
 # Check for sunshine allergy
 
