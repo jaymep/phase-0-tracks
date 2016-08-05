@@ -1,10 +1,12 @@
 #At the beginning of your program, ask the user how many employees will be processed, then begin the survey process for the first employee. After you print the result for that employee, start the survey over again, and repeat until all the employees have been processed.
 
-# puts('How many employees today?')
-# n = gets.chomp
-# n = n.to_i
+puts('How many employees today?')
+n = gets.chomp
+n = n.to_i
 
 # Loop survey n times then final statement
+x = 1
+until x > n
 
 puts("What is your name?")
 name = gets.chomp
@@ -77,8 +79,11 @@ end
 # Print the result at the end of the survey.
 puts('Employee Status: ' + status)
 
+x += 1
+
+end
 # End employee survey loop here
 
 # Add a line at the very end of your program that prints, "Actually, never mind! What do these questions have to do with anything? Let's all be friends." right before it exits. Ahhh, much better.
 
-print(" -- Actually, never mind! What do these questions have to do with anything? Let's all be friends.")
+print("Actually, never mind! What do these questions have to do with anything? Let's all be friends.")
