@@ -7,14 +7,16 @@ def encrypt(str)
   counter = 0
   message = ""
   while counter < len
-     message << str[counter].next
+    if str[counter] == "z"
+      note = "a"
+    else
+      note = str[counter].next
+    end
+    message << note
     counter += 1
   end
     p message
 end
-
-#Test string
-encrypt("hello")
 
 # Decrypt: take each letter in string and go back 1 letter in alphabet
 # Find each letter's position in alphabet and subtract 1 to get new letter
@@ -35,4 +37,12 @@ def decrypt(msg)
 end
 
 #Test string
-decrypt("ifmmp")
+encrypt("abc")
+encrypt("zed")
+encrypt("zzz")
+
+#Test string
+decrypt("bcd")
+decrypt("afe")
+
+
