@@ -36,20 +36,35 @@ def decrypt(msg)
   p result
 end
 
-#Test string
-encrypt("abc")
-encrypt("zed")
-encrypt("zzz")
+# Test string
+# encrypt("abc")
+# encrypt("zed")
+# encrypt("zzz")
+
+# Test string
+# decrypt("bcd")
+# decrypt("afe")
 
 #Test string
-decrypt("bcd")
-decrypt("afe")
-
-#Test string
-decrypt(encrypt("swordfish"))
+# decrypt(encrypt("swordfish"))
 
 # Nested methods work from the variable outwards
 # Before decrypt can work, string has to pass through encrypt
 # String is encrypted by advancing each letter 1 position, 
 # then decrypted by reversing each letter 1 position.
 
+# Ask secret agent user if encrypting or decrypting.
+# Ask secret agent user for password (string to pass through method)
+# Encrypt or decrypt as requested, print result (print is part of methods)
+
+puts "Would you like to decrypt or encrypt?"
+call = gets.chomp
+
+puts "What's your password?"
+password =  gets.chomp
+
+if call == 'encrypt'
+  encrypt(password)
+else 
+  decrypt(password)
+end
