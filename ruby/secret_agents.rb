@@ -45,4 +45,11 @@ encrypt("zzz")
 decrypt("bcd")
 decrypt("afe")
 
+#Test string
+decrypt(encrypt("swordfish"))
+
+# Nested methods work from the variable outwards
+# Before decrypt can work, string has to pass through encrypt
+# String is encrypted by advancing each letter 1 position, 
+# then decrypted by reversing each letter 1 position.
 
