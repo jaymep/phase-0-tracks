@@ -1,8 +1,10 @@
+# Prompt:
 # Write a program that will allow an interior designer to enter the
 # details of a given client: the client's name, age, number of
 # children, decor theme, and so on (you can choose your own as long as
 # it's a good mix of string, integer, and boolean data)
 
+# Pseudocode:
 # Create new hash
 # Ask user to input data for each key
 # Convert input to appropriate data type
@@ -18,7 +20,7 @@
 #     else
 #       Overwrite value for key
 #   Else (or "none", "" or " " entered)
-#     "No changes made." ? "Client added."
+#     Message: "No changes made." or "Client added."
 #   end
 #   Print all key/value pairs
 
@@ -61,6 +63,7 @@ puts "Budget:"
 money = gets.chomp
 client[:budget] = money
 
+# I hope it's not too early to use this method. I picked it up from the Codecademy course.
 client.each do |field, info|
   puts "#{field}: #{info}"
 end
