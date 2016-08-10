@@ -20,38 +20,41 @@
 
 client = Hash.new
 
-p "Name:"
+puts "Name:"
 client[:name] = gets.chomp
 
-p "Age:"
+puts "Age:"
 age = gets.chomp
 age =  age.to_i
 client[:age] = age
 
-p "Address:"
+puts "Address:"
 client[:address] = gets.chomp
 
-p "Favorite color:"
+puts "Favorite color:"
 client[:color] = gets.chomp
 
-p "Carpet: (Y/N)"
+puts "Carpet: (Y/N)"
 floor = gets.chomp
-if floor == "Y"
+if floor == "Y" || floor == "y"
   client[:carpet] = true
 else
   client[:carpet] = false
 end
 
-p "Wallpaper: (Y/N)"
+puts "Wallpaper: (Y/N)"
 wall = gets.chomp
-if wall == "Y"
-  client[:carpet] = true
+if wall == "Y" || wall == "y"
+  client[:wallpaper] = true
 else
-  client[:carpet] = false
+  client[:wallpaper] = false
 end
 
-p "Budget:"
+puts "Budget:"
 money = gets.chomp
-money = money.to_f
 client[:budget] = money
 
+def recap
+  client.each do |field, info|
+    puts "#{field}: #{info}"
+end
