@@ -8,8 +8,6 @@ def add_to_array(array, b)
 end
   
 
-
-
 jayme = []
 p jayme
 
