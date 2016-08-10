@@ -10,11 +10,15 @@
 # Print all key/value pairs
 # 
 # Ask user if there are any changes
-#   If "none", "" or " " entered
-#     "No changes made."
-#   elsif key entered (#to_sym)
+#   If value entered (#to_sym) is a key value
 #     Ask for new value
-#     Overwrite value for key
+#     If key is for boolean
+#       Translate to true/false
+#       Overwrite value
+#     else
+#       Overwrite value for key
+#   Else (or "none", "" or " " entered)
+#     "No changes made." ? "Client added."
 #   end
 #   Print all key/value pairs
 
@@ -33,6 +37,9 @@ client[:address] = gets.chomp
 
 puts "Favorite color:"
 client[:color] = gets.chomp
+
+puts "Theme:"
+client[:theme] = gets.chomp
 
 puts "Carpet: (Y/N)"
 floor = gets.chomp
@@ -54,7 +61,29 @@ puts "Budget:"
 money = gets.chomp
 client[:budget] = money
 
-def recap
-  client.each do |field, info|
-    puts "#{field}: #{info}"
+client.each do |field, info|
+  puts "#{field}: #{info}"
 end
+
+puts "Any changes?"
+to_change = gets.chomp
+to_change = to_change.to_sym
+
+if client.keys.include? to_change
+  puts "Correction?"
+  new_val = gets.chomp
+  if (to_change == :carpet || to_change == :wallpaper) && (new_val == "Y" || new_val == "y")
+    client[to_change] = true
+  elsif (to_change == :carpet || to_change == :wallpaper) && (new_val == "N" || new_val == "n")
+    client[to_change] = false
+  else
+    client[to_change] = new_val
+  end
+else
+  puts "Client added."
+end
+
+client.each do |field, info|
+  puts "#{field}: #{info}"
+end
+
