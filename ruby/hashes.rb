@@ -11,9 +11,47 @@
 # 
 # Ask user if there are any changes
 #   If "none", "" or " " entered
-#     Print all key/value pairs
+#     "No changes made."
 #   elsif key entered (#to_sym)
 #     Ask for new value
 #     Overwrite value for key
 #   end
-#
+#   Print all key/value pairs
+
+client = Hash.new
+
+p "Name:"
+client[:name] = gets.chomp
+
+p "Age:"
+age = gets.chomp
+age =  age.to_i
+client[:age] = age
+
+p "Address:"
+client[:address] = gets.chomp
+
+p "Favorite color:"
+client[:color] = gets.chomp
+
+p "Carpet: (Y/N)"
+floor = gets.chomp
+if floor == "Y"
+  client[:carpet] = true
+else
+  client[:carpet] = false
+end
+
+p "Wallpaper: (Y/N)"
+wall = gets.chomp
+if wall == "Y"
+  client[:carpet] = true
+else
+  client[:carpet] = false
+end
+
+p "Budget:"
+money = gets.chomp
+money = money.to_f
+client[:budget] = money
+
