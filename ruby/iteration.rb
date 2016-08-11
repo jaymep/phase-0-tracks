@@ -15,3 +15,4 @@ dishes = { penne: "pesto", rigatoni: "marinara", bowtie: "alfredo", papardelle: 
 cheese.each { |cheese| puts "I like eating #{cheese}." }
 dishes.each { |pasta, sauce| puts "#{pasta} goes great with #{sauce}." }
 
+cheese.map! { |cheese| p cheese.capitalize }
