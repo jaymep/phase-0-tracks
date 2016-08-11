@@ -79,22 +79,22 @@ number = {
 
 p number.select! { |word, digit| digit.even? }
 
-# # A method that will remove items from a data structure until the condition in the block evaluates to false, then stops (you may not find a perfectly working option for the hash, and that's okay).
+# A method that will remove items from a data structure until the condition in the block evaluates to false, then stops (you may not find a perfectly working option for the hash, and that's okay).
 
-# numbers = [1,2,3,4,5,6,7,8,9,10]
-# p numbers.keep_if { |number| number < 5 }
+numbers = [1,2,3,4,5,6,7,8,9,10]
+p numbers.reject! { |number| number < 5 }
 
-# number = {
-#   one: 1,
-#   two: 2,
-#   three: 3,
-#   four: 4,
-#   five: 5,
-#   six: 6,
-#   seven: 7,
-#   eight: 8,
-#   nine: 9,
-#   ten: 10
-# }
+number = {
+  one: 1,
+  two: 2,
+  three: 3,
+  four: 4,
+  five: 5,
+  six: 6,
+  seven: 7,
+  eight: 8,
+  nine: 9,
+  ten: 10
+}
 
-# p number.keep_if { |word, digit| digit < 5 }
+p number.reject! { |word, digit| digit < 5 }
