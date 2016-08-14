@@ -16,6 +16,10 @@ tv_programming = {
   sports: "football"
 }
 
-p tv_programming[:advertisements]
+p tv_programming[:advertisements].reverse
+p tv_programming[:newscasts][2]
+p tv_programming[:sports].upcase + "!"
+p tv_programming[1] = "Firefly"
+p tv_programming[:tv_series].store("Spaced", "Gone")
 
-tv_programming[:advertisements]
+tv_programming[:tv_series].each { | show, episode | p episode }
