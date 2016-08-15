@@ -47,7 +47,7 @@ while true
   @identity =  gets.chomp
   
   if @identity == "quit"
-    puts spy_roster
+    spy_roster.each { |real, fake| puts"#{real} is now #{fake}."}
     break
   end
 
