@@ -46,4 +46,17 @@ puts "What is your name?"
 id_samecase = @identity.downcase
 reversed = id_samecase.split(" ").reverse
 reverse_id = reversed.join(" ")
+reverse_array = reverse_id.chars
 
+reverse_array.each do |char|
+  if @vowel.include? char
+    new_array << next_vowel(char)
+  elsif @consonant.include? char
+    new_array << next_consonant(char)
+  else
+    new_array << char.next
+  end 
+  @new_identity = new_array.join("").capitalize
+end
+
+p "#{@identity} is now #{@new_identity}."
