@@ -39,24 +39,36 @@ def next_consonant(char)
   new_consonant = @consonant[consonant_index]
 end
 
-new_array = Array.new
+spy_roster = Hash.new
 
-puts "What is your name?"
-@identity =  gets.chomp
-id_samecase = @identity.downcase
-reversed = id_samecase.split(" ").reverse
-reverse_id = reversed.join(" ")
-reverse_array = reverse_id.chars
+while true
+  new_array = Array.new
+  puts "What is your name?"
+  @identity =  gets.chomp
+  
+  if @identity == "quit"
+    puts spy_roster
+    break
+  end
 
-reverse_array.each do |char|
-  if @vowel.include? char
-    new_array << next_vowel(char)
-  elsif @consonant.include? char
-    new_array << next_consonant(char)
-  else
-    new_array << char.next
-  end 
-  @new_identity = new_array.join("").capitalize
+  id_samecase = @identity.downcase
+  reversed = id_samecase.split(" ").reverse
+  reverse_id = reversed.join(" ")
+  reverse_array = reverse_id.chars
+
+  reverse_array.each do |char|
+    if @vowel.include? char
+      new_array << next_vowel(char)
+    elsif @consonant.include? char
+      new_array << next_consonant(char)
+    else
+      new_array << char
+    end 
+    @new_identity = new_array.join("").capitalize #Find way to capitalize both names
+  end
+  spy_roster.store(@identity,  @new_identity)
+  puts"#{@identity} is now #{@new_identity}."
 end
 
-p "#{@identity} is now #{@new_identity}."
+
+
