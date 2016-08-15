@@ -24,6 +24,10 @@ class Puppy
     end
   end
   
+  def initialize
+    puts "Initializing new puppy instance ..."
+  end
+  
 end
 
 # Driver code
