@@ -2,12 +2,21 @@ class Puppy
 
   def fetch(toy)
     puts "I brought back the #{toy}!"
-    # removed "toy" and now method works
+    
+  end
+
+  def speak(x)
+    x.times.each do puts "Woof!"
+    end
   end
 
 end
 
 # Driver code
+
 sparkles = Puppy.new
-sparkles.fetch("ball")
-sparkles.fetch("stick")
+
+# sparkles.fetch("ball")
+# sparkles.fetch("stick")
+
+# sparkles.speak(3)
