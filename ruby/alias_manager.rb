@@ -38,3 +38,12 @@ def next_consonant(char)
   consonant_index = @consonant.index(char) + 1
   new_consonant = @consonant[consonant_index]
 end
+
+new_array = Array.new
+
+puts "What is your name?"
+@identity =  gets.chomp
+id_samecase = @identity.downcase
+reversed = id_samecase.split(" ").reverse
+reverse_id = reversed.join(" ")
+
