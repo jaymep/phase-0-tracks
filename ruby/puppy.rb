@@ -19,3 +19,5 @@ Chew
 Growl
 Yelp
 Wag tail
+Beg
+Sit
