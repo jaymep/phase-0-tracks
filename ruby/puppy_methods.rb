@@ -63,11 +63,19 @@ class Cookie
 
 end
 
+# chocolate = Cookie.new
+# chocolate.bake(8)
+# chocolate.decorate("macadamia nuts")
+
 batch = Array.new
 50.times.each do
   chocolate = Cookie.new
-  # chocolate.bake(8)
-  # chocolate.decorate("macadamia nuts")
+
   batch << chocolate
 end
 p batch.length
+
+batch.each do |snack|
+  snack.bake(8)
+  snack.decorate("sprinkles")
+end 
