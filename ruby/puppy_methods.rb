@@ -40,3 +40,25 @@ end
 # sparkles.roll_over
 # sparkles.dog_years(13)
 # sparkles.high_five(5)
+
+class Cookie
+  
+  def initialize
+    puts "Behold -- a new cookie!"
+  end
+
+  def bake(x)
+    if x < 10
+      puts "Your cookie is not yet ready."
+    elsif x > 10 && x < 15
+      puts "Yay, fresh cookies!"
+    else
+      puts "Darn! Burnt cookies!"
+    end
+  end
+
+  def 
+
+
+
+end
