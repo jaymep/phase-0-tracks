@@ -57,8 +57,17 @@ class Cookie
     end
   end
 
-  def 
-
-
+  def decorate(toppings)
+    puts "Now you have cookies with #{toppings}!"
+  end
 
 end
+
+batch = Array.new
+50.times.each do
+  chocolate = Cookie.new
+  # chocolate.bake(8)
+  # chocolate.decorate("macadamia nuts")
+  batch << chocolate
+end
+p batch.length
