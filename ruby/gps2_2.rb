@@ -101,3 +101,17 @@ update_item("Lemonade", 0, groceries)
 update_item("Ice Cream", 1, groceries)
 
 print_list(groceries)
+
+# Reflection:
+# What did you learn about pseudocode from working on this challenge?
+# -- There are important things like input, output and format that should be included when writing pseudocode. It doesn't have to  be detailed, but the finer the granularity,  the easier it is to write the initial solution.
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# -- Hashes enabled us to store items and quantities, but figuring out how to parse the information and declare default quantities needed more thought. Arrays are easier to set up, but figuring out how to turn array values into hash keys is not so basic.
+# What does a method return?
+# -- The result of the last statement executed
+# What kind of things can you pass into methods as arguments?
+# -- Arrays, hashes, strings, integers, other methods
+# How can you pass information between methods?
+# -- A variable created and called in each method.
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+# -- Refactoring and pseudocode make more sense. Methods as arguments make sense. I still need to get more familiar with variable scope.
