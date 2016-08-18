@@ -8,11 +8,26 @@ class Santa
     puts "That was a good #{flavor}!"
   end
   
-  def initialize
+  def initialize(gender, ethnicity)
     puts "Initializing Santa instance ..."
+    @gender = gender
+    @ethnicity = ethnicity
   end
-  
+
+  def reindeer_ranking
+    ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+  end
+
+  def age
+    @age = 0
+  end
+
 end
+
+
+
+
+
 
 # Driver code
 # nick = Santa.new
