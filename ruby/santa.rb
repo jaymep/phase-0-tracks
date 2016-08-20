@@ -17,15 +17,16 @@ class Santa
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     end
 
-  # def age
+# Getter methods
+  def age
+    @age
+  end
 
-  #   # age
-  # end
+  def ethnicity
+    @ethnicity
+  end  
 
-  # def ethnicity
-
-  # end  
-
+# Setter methods
   def celebrate_birthday
     @age += 1
   end
@@ -35,15 +36,21 @@ class Santa
     @reindeer_ranking.delete_at(reindeer_pos)
     @reindeer_ranking.push(reindeer)
   end
+
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
 end
 
 # Driver code
-# nick = Santa.new("male", "Japanese")
+nick = Santa.new("male", "Japanese")
 # nick.speak
 # nick.eat_milk_and_cookies("snickerdoodle")
 
 # nick.get_mad_at("Prancer")
 # nick.celebrate_birthday
+nick.gender = "fluid"
 
 # SantaCon Driver Code
 # santas = []
