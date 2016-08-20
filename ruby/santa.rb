@@ -1,6 +1,6 @@
 class Santa
-  attr_reader :age, :ethnicity
-  attr_accessor :gender
+  attr_reader :ethnicity
+  attr_accessor :gender, :age
 
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
@@ -10,11 +10,11 @@ class Santa
     puts "That was a good #{flavor}!"
   end
   
-  def initialize(gender, ethnicity)
+  def initialize(age, gender, ethnicity)
     puts "Initializing Santa instance ..."
     @gender = gender
     @ethnicity = ethnicity
-    @age = 0
+    @age = age # changed from 0 for release 4
     @ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     end
@@ -31,6 +31,7 @@ class Santa
 
 end
 
+
 # Driver code
 # nick = Santa.new("male", "Japanese")
 # nick.speak
@@ -40,7 +41,8 @@ end
 # nick.celebrate_birthday
 # nick.gender = "fluid"
 
-# SantaCon Driver Code
+
+# SantaCon initial driver code
 # santas = []
 # santas << Santa.new("agender", "black")
 # santas << Santa.new("female", "Latino")
@@ -50,7 +52,8 @@ end
 # santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
 # santas << Santa.new("N/A", "N/A")
 
-# Possible solution
+
+# Possible refactor solution
 # Array of genders and ethnicities, create array of santas by taking corresponding value from each array.
 # santas = []
 # example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
@@ -60,10 +63,42 @@ end
 # end
 # santas
 
-# Another solution
+
+# Another refactor solution
 # Each santa is added as an array to an array and initialized from outer array.
 # santas = []
 # example_queue = [["agender", "black"], ["female", "Latino"], ["bigender", "white"], ["male", "Japanese"], ["female", "prefer not to say"], ["gender fluid", "Mystical Creature (unicorn)"], ["N/A", "N/A"]]
 # example_queue.each { |gender, ethnicity| santas << Santa.new(gender, ethnicity) }
 # santas
+
+
+# Create all the Santas
+# Create new Santa with randomly selected gender and ethnicity from sample arrays
+# Set Santa's age to random number from 0 to 140
+# Print Santa attributes
+
+# while i is less than (# iterations + 1)
+# Find other way to insert line break
+# Put info printout into method if time for refactor
+genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+age = (0..140).to_a
+santas =[]
+i = 1
+
+while i < 50 do 
+  @gender = genders.sample
+  @ethnicity = ethnicities.sample
+  @age = age.sample
+  
+  Santa.new(@age, @gender, @ethnicity)
+
+  puts "Santa No: #{i}"
+  puts "Age: #{@age}"
+  puts "Gender: #{@gender}"
+  puts "Ethnicity: #{@ethnicity}"
+  puts 
+
+  i += 1
+end
 
