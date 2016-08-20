@@ -1,4 +1,6 @@
 class Santa
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
 
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
@@ -17,16 +19,6 @@ class Santa
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     end
 
-# Getter methods
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end  
-
-# Setter methods
   def celebrate_birthday
     @age += 1
   end
@@ -37,20 +29,16 @@ class Santa
     @reindeer_ranking.push(reindeer)
   end
 
-  def gender=(new_gender)
-    @gender = new_gender
-  end
-
 end
 
 # Driver code
-nick = Santa.new("male", "Japanese")
+# nick = Santa.new("male", "Japanese")
 # nick.speak
 # nick.eat_milk_and_cookies("snickerdoodle")
 
 # nick.get_mad_at("Prancer")
 # nick.celebrate_birthday
-nick.gender = "fluid"
+# nick.gender = "fluid"
 
 # SantaCon Driver Code
 # santas = []
@@ -78,3 +66,4 @@ nick.gender = "fluid"
 # example_queue = [["agender", "black"], ["female", "Latino"], ["bigender", "white"], ["male", "Japanese"], ["female", "prefer not to say"], ["gender fluid", "Mystical Creature (unicorn)"], ["N/A", "N/A"]]
 # example_queue.each { |gender, ethnicity| santas << Santa.new(gender, ethnicity) }
 # santas
+
