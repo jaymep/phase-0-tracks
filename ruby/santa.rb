@@ -38,11 +38,12 @@ class Santa
 end
 
 # Driver code
-nick = Santa.new("male", "Japanese")
+# nick = Santa.new("male", "Japanese")
 # nick.speak
 # nick.eat_milk_and_cookies("snickerdoodle")
 
-nick.get_mad_at("Prancer")
+# nick.get_mad_at("Prancer")
+# nick.celebrate_birthday
 
 # SantaCon Driver Code
 # santas = []
@@ -54,8 +55,17 @@ nick.get_mad_at("Prancer")
 # santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
 # santas << Santa.new("N/A", "N/A")
 
+# Possible solution
+# santas = []
 # example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 # example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 # example_genders.length.times do |i|
 #   santas << Santa.new(example_genders[i], example_ethnicities[i])
 # end
+# santas
+
+# Another solution
+# santas = []
+# example_queue = [["agender", "black"], ["female", "Latino"], ["bigender", "white"], ["male", "Japanese"], ["female", "prefer not to say"], ["gender fluid", "Mystical Creature (unicorn)"], ["N/A", "N/A"]]
+# example_queue.each { |gender, ethnicity| santas << Santa.new(gender, ethnicity) }
+# santas
