@@ -56,6 +56,7 @@ end
 # santas << Santa.new("N/A", "N/A")
 
 # Possible solution
+# Array of genders and ethnicities, create array of santas by taking corresponding value from each array.
 # santas = []
 # example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 # example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
@@ -65,6 +66,7 @@ end
 # santas
 
 # Another solution
+# Each santa is added as an array to an array and initialized from outer array.
 # santas = []
 # example_queue = [["agender", "black"], ["female", "Latino"], ["bigender", "white"], ["male", "Japanese"], ["female", "prefer not to say"], ["gender fluid", "Mystical Creature (unicorn)"], ["N/A", "N/A"]]
 # example_queue.each { |gender, ethnicity| santas << Santa.new(gender, ethnicity) }
