@@ -59,9 +59,9 @@ lineup = Array.new
 puts "How many dancers are performing?"
 dancer_count = gets.chomp.to_i 
 
-dancer_count.times {|x| lineup << "dancer" + x.to_s}
+# dancer_count.times {|x| lineup << "dancer" + x.to_s}
 
-lineup.each do |dancer_id|
+dancer_count.times do |dancer_id|
   puts "Who is dancing?"
   name = gets.chomp
   puts "How old is the dancer?"
@@ -69,7 +69,9 @@ lineup.each do |dancer_id|
   puts "What is the dancer's hometown?"
   hometown = gets.chomp
   dancer_id = Bellydancer.new(name, age, hometown)
+  lineup << dancer_id
 end
+lineup
 
 
 
