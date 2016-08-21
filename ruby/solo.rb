@@ -14,10 +14,14 @@
 
 # methods
 #   hip_drop ==> number of times
-#   shimmy ==> area & duration
-#   turn ==> number of times
+#   shimmy ==> area & times
+#   turn ==> direction & times
 #   entrance ==> entrance message
 #   exit ==> exit message
+
+# can combine attributes & methods for 
+# choreography/dance output
+# program/lineup/stage manager notes
 
 class Bellydancer
   attr_reader :age, :hometown
@@ -57,15 +61,15 @@ end
 
 lineup = Array.new
 puts "How many dancers are performing?"
-dancer_count = gets.chomp.to_i 
+dancer_count = gets.to_i 
 
-# dancer_count.times {|x| lineup << "dancer" + x.to_s}
+
 
 dancer_count.times do |dancer_id|
   puts "Who is dancing?"
   name = gets.chomp
   puts "How old is the dancer?"
-  age = gets.chomp.to_i
+  age = gets.to_i
   puts "What is the dancer's hometown?"
   hometown = gets.chomp
   dancer_id = Bellydancer.new(name, age, hometown)
@@ -86,6 +90,6 @@ lineup
 # dancer1.turn("Right", 4)
 # dancer1.shimmy("Hip", 4)
 # dancer1.exit
-# dancer1.introduce
+# dancer1.introduce # Test introduce method
 # dancer1.name = "Nadira"
-# dancer1.introduce
+# dancer1.introduce # Test name change
