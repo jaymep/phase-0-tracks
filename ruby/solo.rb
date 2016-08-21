@@ -54,3 +54,36 @@ class Bellydancer
   end
 
 end
+
+lineup = Array.new
+puts "How many dancers are performing?"
+dancer_count = gets.chomp.to_i 
+
+dancer_count.times {|x| lineup << "dancer" + x.to_s}
+
+lineup.each do |dancer_id|
+  puts "Who is dancing?"
+  name = gets.chomp
+  puts "How old is the dancer?"
+  age = gets.chomp.to_i
+  puts "What is the dancer's hometown?"
+  hometown = gets.chomp
+  dancer_id = Bellydancer.new(name, age, hometown)
+end
+
+
+
+
+
+
+# Driver code
+# dancer1 = Bellydancer.new("Shira", 35, "Chicago")
+# dancer1.entrance
+# dancer1.shimmy("Shoulder", 4)
+# dancer1.turn("Left", 4)
+# dancer1.turn("Right", 4)
+# dancer1.shimmy("Hip", 4)
+# dancer1.exit
+# dancer1.introduce
+# dancer1.name = "Nadira"
+# dancer1.introduce
