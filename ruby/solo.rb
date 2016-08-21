@@ -20,8 +20,8 @@
 #   exit ==> exit message
 
 class Bellydancer
-  attr_reader
-  attr_accessor
+  attr_reader :age, :hometown
+  attr_accessor :name
 
   def initialize(name, age, hometown)
     @name = name
@@ -29,12 +29,28 @@ class Bellydancer
     @hometown = hometown
   end
 
+  def introduce
+    puts "Please welcome #{@name}, #{@age}, from #{@hometown}!"
+  end
+
   def entrance
     puts "The music builds and here comes the dancer..."
   end
 
   def exit
-    puts "Sweeping curtsies to stage left and right before leaving the stage."
+    puts "The dancer curtsies to stage left and right before leaving the stage."
+  end
+
+  def hip_drop(x)
+    x.times {puts "Hip Drop "}
+  end
+
+  def turn(direction, x)
+    x.times {puts "Turn #{direction}"}
+  end
+
+  def shimmy(area, x)
+    x.time {puts "#{area} shimmy "}
   end
 
 end
