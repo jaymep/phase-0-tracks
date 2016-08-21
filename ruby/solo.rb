@@ -54,7 +54,7 @@ class Bellydancer
   end
 
   def shimmy(area, x)
-    x.time {puts "#{area} shimmy "}
+    x.times {puts "#{area} shimmy "}
   end
 
 end
