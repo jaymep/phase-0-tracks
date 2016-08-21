@@ -25,49 +25,50 @@
 #   return new consonant
 # join into consonant string, capitalize
 
-#Reference strings:
-@vowel = "aeioua"
-@consonant = "bcdfghjklmnpqrstvwxyzb"
+# Reference strings:
+# Changed to constants -- feedback from DBC guide
+VOWEL = "aeioua"
+CONSONANT = "bcdfghjklmnpqrstvwxyzb"
 
 def next_vowel(char)
-  vowel_index = @vowel.index(char) + 1
-  new_vowel = @vowel[vowel_index]
+  vowel_index = VOWEL.index(char) + 1
+  new_vowel = VOWEL[vowel_index]
 end
 
 def next_consonant(char)
-  consonant_index = @consonant.index(char) + 1
-  new_consonant = @consonant[consonant_index]
+  consonant_index = CONSONANT.index(char) + 1
+  new_consonant = CONSONANT[consonant_index]
 end
 
 spy_roster = Hash.new
 
 while true
   new_array = Array.new
-  puts "What is your name?"
-  @identity =  gets.chomp
+  puts "What is your name? ('quit' when finished)"
+  identity =  gets.chomp
   
-  if @identity == "quit"
+  if identity == "quit"
     spy_roster.each { |real, fake| puts"#{real} is now #{fake}."}
     break
   end
 
-  id_samecase = @identity.downcase
+  id_samecase = identity.downcase
   reversed = id_samecase.split(" ").reverse
   reverse_id = reversed.join(" ")
   reverse_array = reverse_id.chars
 
   reverse_array.each do |char|
-    if @vowel.include? char
+    if VOWEL.include? char
       new_array << next_vowel(char)
-    elsif @consonant.include? char
+    elsif CONSONANT.include? char
       new_array << next_consonant(char)
     else
       new_array << char
     end 
     @new_identity = new_array.join("").capitalize #Find way to capitalize both names
   end
-  spy_roster.store(@identity,  @new_identity)
-  puts"#{@identity} is now #{@new_identity}."
+  spy_roster.store(identity, @new_identity)
+  puts"#{identity} is now #{@new_identity}."
 end
 
 
