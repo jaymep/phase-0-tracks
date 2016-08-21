@@ -1,12 +1,14 @@
 module Shout
-  def self.yell_angrily(words)
-    words + "!!!" + " :("
-  end
+  # Standalone modules
+  # def self.yell_angrily(words)
+  #   words + "!!!" + " :("
+  # end
 
-  def self.yell_happily(words)
-    words + "!!!" + " :)"
-  end
+  # def self.yell_happily(words)
+  #   words + "!!!" + " :)"
+  # end
    
+  # Mixin modules 
   def yell_angrily(words)
     words + "!!!" + " :("
   end
@@ -20,9 +22,15 @@ class Sports_fan
   include Shout
 end
 
-fan = Sports_fan.new
+class Sports_ref
+  include Shout
+end
 
-p fan.yell_happily("Score")
+# Driver code
+# fan = Sports_fan.new
+# p fan.yell_happily("Score")
+# p fan.yell_angrily("Foul")
 
-p fan.yell_angrily("Foul")
-
+# ref = Sports_ref.new
+# p ref.yell_happily("Safe")
+# p ref.yell_angrily("Out")
