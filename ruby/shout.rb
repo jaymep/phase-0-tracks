@@ -27,6 +27,11 @@ class Sports_ref
 end
 
 # Driver code
+# Standalone
+# boo = Shout.yell_angrily("Boo")
+# yay = Shout.yell_happily("Yay")
+
+# Mixin
 # fan = Sports_fan.new
 # p fan.yell_happily("Score")
 # p fan.yell_angrily("Foul")
