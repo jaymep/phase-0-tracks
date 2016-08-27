@@ -25,10 +25,16 @@
 #   return new consonant
 # join into consonant string, capitalize
 
+# Refactors since initial submission:
+# Corrected variables to constants
+# Added steps to capitalize each part of spy name
+# Fixed loop to remove vague true and break if
+
 # Reference strings:
 # Changed to constants -- feedback from DBC guide
 VOWEL = "aeioua"
 CONSONANT = "bcdfghjklmnpqrstvwxyzb"
+new_identity = ""
 
 def next_vowel(char)
   vowel_index = VOWEL.index(char) + 1
@@ -42,15 +48,11 @@ end
 
 spy_roster = Hash.new
 
-while true
+puts "What is your name? ('quit' when finished)"
+identity =  gets.chomp
+
+while identity != 'quit'
   new_array = Array.new
-  puts "What is your name? ('quit' when finished)"
-  identity =  gets.chomp
-  
-  if identity == "quit"
-    spy_roster.each { |real, fake| puts"#{real} is now #{fake}."}
-    break
-  end
 
   id_samecase = identity.downcase
   reversed = id_samecase.split(" ").reverse
@@ -65,11 +67,19 @@ while true
     else
       new_array << char
     end 
-    @new_identity = new_array.join("").capitalize #Find way to capitalize both names
+    new_identity_lower = new_array.join("")
+    new_identity_arr = new_identity_lower.split(" ")
+    new_identity_arr.map! { |name| name.capitalize }
+    new_identity = new_identity_arr.join(" ")
   end
-  spy_roster.store(identity, @new_identity)
-  puts"#{identity} is now #{@new_identity}."
+  spy_roster.store(identity, new_identity)
+  puts"#{identity} is now #{new_identity}."
+  puts ""
+  puts "What is your name? ('quit' when finished)"
+  identity =  gets.chomp
 end
 
+
+puts spy_roster.each { |real, fake| puts"#{real} is now #{fake}."}
 
 

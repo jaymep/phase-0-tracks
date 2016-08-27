@@ -1,6 +1,6 @@
 class Santa
-  attr_reader :ethnicity
-  attr_accessor :gender, :age
+  #attr_reader :ethnicity
+  attr_accessor :gender #, :age
 
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
@@ -12,12 +12,12 @@ class Santa
   
   def initialize(age, gender, ethnicity)
     puts "Initializing Santa instance ..."
-    @gender = gender
+    @gender = gender # Add attr_accessor to allow gender change
     @ethnicity = ethnicity
     @age = age # changed from 0 for release 4
     @ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    end
+  end
 
   def celebrate_birthday
     @age += 1
@@ -80,25 +80,29 @@ end
 # while i is less than (# iterations + 1)
 # Find other way to insert line break
 # Put info printout into method if time for refactor
+
 genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-age = (0..140).to_a
+# age = (0..140).to_a
 santas =[]
 i = 1
 
-while i < 50 do 
-  @gender = genders.sample
-  @ethnicity = ethnicities.sample
-  @age = age.sample
+while i < 5 do 
+  gender = genders.sample
+  ethnicity = ethnicities.sample
+  # age = age.sample
+  age = (0..140).to_a.sample
   
-  Santa.new(@age, @gender, @ethnicity)
+  Santa.new(age, gender, ethnicity)
 
-  puts "Santa No: #{i}"
-  puts "Age: #{@age}"
-  puts "Gender: #{@gender}"
-  puts "Ethnicity: #{@ethnicity}"
+  puts "Santa No: " + i.to_s  
+  puts "Age: #{age}"
+  puts "Gender: #{gender}"
+  puts "Ethnicity: #{ethnicity}"
   puts 
 
   i += 1
 end
 
+# Comments:
+# Hi Jayme, I think there's a little confusion in regards to instance variables and accessing class attributes. To start, adding an @ in front of a variable name declares an instance variable, which is only used within the class declaration. On line 90, 91, 92, you use @gender, @ethnicity, @age. Did you mean to just declare a normal variable? Or did you mean to access an attribute in the class via setter method? In addition, in your driver code on line 42, you properly access the gender attribute to reassign gender a new value of fluid. However, you don't access any of the other attributes to demonstrate the usage of a getter method like `puts nick.ethnicity` or `puts nick.age`. Please message me on slack @jwmendio if you have any questions.
