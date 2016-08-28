@@ -19,8 +19,16 @@
 
 // Release 2: Generate Random Test Data
 
-function maxLength(array) {
+function maxLength(arr) {
+  var newArr = [];
+  for (var i = 0, len = arr.length; i < len; i++) {
+    newArr.push(arr[i].length);
+  }
 
+  var maxLength = Math.max.apply(Math, newArr);
+  var maxLengthIndex = newArr.indexOf(maxLength);
+
+  console.log(arr[maxLengthIndex]);
 
 }
 
@@ -34,6 +42,11 @@ function maxLength(array) {
 
 // DRIVER CODE
 // Release 0: Find the Longest Phrase
+// console.log(newArr); // captured values
+// console.log(maxLength); // length of longest string 
+// console.log(maxLengthIndex); // position of longest string
+// console.log(arr[maxLengthIndex]); //phrase at correspinding striggred
+maxLength(["long phrase","longest phrase","longer phrase"]);
 
 // Release 1: Find a Key-Value Match
 
