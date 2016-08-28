@@ -6,3 +6,16 @@
 // decrease counter by 1 for each loop until counter is 0
 // print new string (keep print outside of loop)
 
+function reverse(str) {
+  var newStr = "";
+
+  for (i = str.length - 1; i >= 0; i-=1) {
+    newStr += str[i];
+  }
+  console.log(newStr);
+}
+
+// DRIVER CODE
+// reverse("backwards test");
+// reverse("abracadabra");
+// reverse("supercalifragilisticexpialidocious");
