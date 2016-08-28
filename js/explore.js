@@ -18,4 +18,9 @@ function reverse(str) {
 // DRIVER CODE
 // reverse("backwards test");
 // reverse("abracadabra");
-// reverse("supercalifragilisticexpialidocious");
+
+var backwards = reverse("supercalifragilisticexpialidocious");
+
+if (1 == 1) {
+  console.log(backwards);
+}
