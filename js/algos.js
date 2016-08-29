@@ -8,33 +8,33 @@
 //   find position of max value
 //   use max value index to find phrase
 
-//   or (as soon as I can figure this one out)
-
-//   set array as variable
-//   set empty hash as variable
-//   add each phrase as key and length as value to hash
-//   find max value and return key
-
-// Release 1: Find a Key-Value Match
+Release 1: Find a Key-Value Match
+  compare key from first object to second object
+  if keys match, check if values match return true and stop
+  otherwise repeat until match is found or no more keys to compare
+  if no keys match, return false
 
 // Release 2: Generate Random Test Data
 
-function maxLength(arr) {
-  var newArr = [];
-  for (var i = 0, len = arr.length; i < len; i++) {
-    newArr.push(arr[i].length);
-  }
 
-  var maxLength = Math.max.apply(Math, newArr);
-  var maxLengthIndex = newArr.indexOf(maxLength);
+// FUNCTION CODE
+// function maxLength(arr) {
+//   var newArr = [];
+//   for (var i = 0, len = arr.length; i < len; i++) {
+//     newArr.push(arr[i].length);
+//   }
 
-  console.log(arr[maxLengthIndex]);
+//   var maxLength = Math.max.apply(Math, newArr);
+//   var maxLengthIndex = newArr.indexOf(maxLength);
 
-}
-
-// function findMatch(obj1,obj2) {
+//   console.log(arr[maxLengthIndex]);
 
 // }
+
+function findMatch(obj1,obj2) {
+  if (obj1[])
+  }
+}
 
 // function createData(set) {
 
