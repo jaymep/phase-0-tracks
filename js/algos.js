@@ -29,14 +29,14 @@
 // }
 
 function findMatch(obj1,obj2) {
-  for (var i = 0; i < Object.keys(obj1).length; i++) {
-    for (var n = 0; n < Object.keys(obj2).length; i++) {
-      // if (Object.keys(obj1)[i] == Object.keys(obj2)[n]) {
-        // match = true
-      };
-    };
-  };
+  if (Object.keys(obj1)[1] == Object.keys(obj2)[1]) {
+    if (obj1[Object.keys(obj1)[1]] == obj2[Object.keys(obj2)[1]]) {
+      return true;
+    }
+  } else {return false;}
 }
+
+
 
 // function createData(set) {
 
@@ -48,15 +48,19 @@ function findMatch(obj1,obj2) {
 // console.log(maxLength); // length of longest string 
 // console.log(maxLengthIndex); // position of longest string
 // console.log(arr[maxLengthIndex]); //phrase at correspinding striggred
-maxLength(["long phrase","longest phrase","longer phrase"]);
-// return "longest phrase"
-maxLength(["bibbidi bobbity boo","hakuna matata","jiminy cricket"]);
-// return "bibbidi bobbity boo"
-maxLength(["leonardo","raphael","donatello", "michaelangelo"]);
-//  return "michaelangelo"
+// maxLength(["long phrase","longest phrase","longer phrase"]);
+//   return "longest phrase"
+// maxLength(["bibbidi bobbity boo","hakuna matata","jiminy cricket"]);
+//   return "bibbidi bobbity boo"
+// maxLength(["leonardo","raphael","donatello", "michaelangelo"]);
+//   return "michaelangelo"
 
 
 // Release 1: Find a Key-Value Match
+var obj1 = {name: "Steven", age: 54}; 
+var obj2 = {name: "Tamir", age: 54};
 console.log(Object.keys(obj1)[0]); // key
 console.log(obj1[Object.keys(obj1)[0]]); // value
+
+
 // Release 2: Generate Random Test Data
