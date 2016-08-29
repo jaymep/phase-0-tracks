@@ -59,8 +59,12 @@ function findMatch(obj1,obj2) {
 // Release 1: Find a Key-Value Match
 var obj1 = {name: "Steven", age: 54}; 
 var obj2 = {name: "Tamir", age: 54};
+console.log(Object.keys(obj1).length); // object size
 console.log(Object.keys(obj1)[0]); // key
 console.log(obj1[Object.keys(obj1)[0]]); // value
+console.log(findMatch(obj1,obj2));
 
-
+var obj3 = {name: "Ryan", age: 24}; 
+var obj4 = {named: "Ryan", age: 37};
+console.log(findMatch(obj3,obj4));
 // Release 2: Generate Random Test Data
