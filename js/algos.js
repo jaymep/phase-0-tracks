@@ -30,12 +30,12 @@
 
 function findMatch(obj1,obj2) {
   for (var i = 0; i < Object.keys(obj1).length; i++) {
-    if (Object.keys(obj1)[i] == Object.keys(obj2)[i]) {
-      if (obj1[Object.keys(obj1)[i]] == obj2[Object.keys(obj2)[i]]) {
+    if (Object.keys(obj1)[i] === Object.keys(obj2)[i]) {
+      if (obj1[Object.keys(obj1)[i]] === obj2[Object.keys(obj2)[i]]) {
        return true;
-      }
-    }   else {return false;}
-  } 
+      } 
+    }   
+  }  return false;
 }
 
 // function createData(set) {
@@ -68,4 +68,9 @@ function findMatch(obj1,obj2) {
   var obj3 = {name: "Ryan", age: 24}; 
   var obj4 = {named: "Ryan", age: 37};
   console.log(findMatch(obj3,obj4));
+
+  var obj5 = {color: "green", vehicle: "jeep", seats: 5}; 
+  var obj6 = {color: "yellow", vehicle: "submarine", seats: 8};
+  console.log(findMatch(obj5,obj6));
+
 // Release 2: Generate Random Test Data
