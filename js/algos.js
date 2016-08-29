@@ -50,12 +50,12 @@ Release 2: Generate Random Test Data
 function createData(setLength) {
   var dataSet = [];
   var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-  var alphabetIndex = Math.floor(Math.random() * (25 - 0) + 0);
-  var stringLength = Math.floor(Math.random() * (10 - 1) + 1);
+  // alphabetIndex = Math.floor(Math.random() * (25 - 0) + 0);
+  // stringLength = Math.floor(Math.random() * (10 - 1) + 1);
   var dataString = '';
   for (var i = 0; i < setLength; i ++) {
     dataString = '';
-    for (var j = 0; j < stringLength; j++) {
+    for (var j = 0; j < Math.floor(Math.random() * (10 - 1) + 1); j++) {
       dataString = dataString + alphabet[Math.floor(Math.random() * (25 - 0) + 0)];
       }    dataSet.push(dataString);
   } console.log(dataSet);
