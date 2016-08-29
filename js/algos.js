@@ -58,5 +58,5 @@ maxLength(["leonardo","raphael","donatello", "michaelangelo"]);
 
 // Release 1: Find a Key-Value Match
 console.log(Object.keys(obj1)[0]); // key
-
+console.log(obj1[Object.keys(obj1)[0]]); // value
 // Release 2: Generate Random Test Data
