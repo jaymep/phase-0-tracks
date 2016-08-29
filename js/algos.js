@@ -29,14 +29,14 @@
 // }
 
 function findMatch(obj1,obj2) {
-  if (Object.keys(obj1)[1] == Object.keys(obj2)[1]) {
-    if (obj1[Object.keys(obj1)[1]] == obj2[Object.keys(obj2)[1]]) {
-      return true;
-    }
-  } else {return false;}
+  for (var i = 0; i < Object.keys(obj1).length; i++) {
+    if (Object.keys(obj1)[i] == Object.keys(obj2)[i]) {
+      if (obj1[Object.keys(obj1)[i]] == obj2[Object.keys(obj2)[i]]) {
+       return true;
+      }
+    }   else {return false;}
+  } 
 }
-
-
 
 // function createData(set) {
 
@@ -44,27 +44,28 @@ function findMatch(obj1,obj2) {
 
 // DRIVER CODE
 // Release 0: Find the Longest Phrase
-// console.log(newArr); // captured values
-// console.log(maxLength); // length of longest string 
-// console.log(maxLengthIndex); // position of longest string
-// console.log(arr[maxLengthIndex]); //phrase at correspinding striggred
-// maxLength(["long phrase","longest phrase","longer phrase"]);
-//   return "longest phrase"
-// maxLength(["bibbidi bobbity boo","hakuna matata","jiminy cricket"]);
-//   return "bibbidi bobbity boo"
-// maxLength(["leonardo","raphael","donatello", "michaelangelo"]);
-//   return "michaelangelo"
+  // console.log(newArr); // captured values
+  // console.log(maxLength); // length of longest string 
+  // console.log(maxLengthIndex); // position of longest string
+  // console.log(arr[maxLengthIndex]); //phrase at correspinding striggred
+
+  // maxLength(["long phrase","longest phrase","longer phrase"]);
+  // // return "longest phrase"
+  // maxLength(["bibbidi bobbity boo","hakuna matata","jiminy cricket"]);
+  // // return "bibbidi bobbity boo"
+  // maxLength(["leonardo","raphael","donatello", "michaelangelo"]);
+  // // return "michaelangelo"
 
 
 // Release 1: Find a Key-Value Match
-var obj1 = {name: "Steven", age: 54}; 
-var obj2 = {name: "Tamir", age: 54};
-console.log(Object.keys(obj1).length); // object size
-console.log(Object.keys(obj1)[0]); // key
-console.log(obj1[Object.keys(obj1)[0]]); // value
-console.log(findMatch(obj1,obj2));
+  var obj1 = {name: "Steven", age: 54}; 
+  var obj2 = {name: "Tamir", age: 54};
+  console.log(Object.keys(obj1).length); // object size
+  console.log(Object.keys(obj1)[0]); // key
+  console.log(obj1[Object.keys(obj1)[0]]); // value
+  console.log(findMatch(obj1,obj2));
 
-var obj3 = {name: "Ryan", age: 24}; 
-var obj4 = {named: "Ryan", age: 37};
-console.log(findMatch(obj3,obj4));
+  var obj3 = {name: "Ryan", age: 24}; 
+  var obj4 = {named: "Ryan", age: 37};
+  console.log(findMatch(obj3,obj4));
 // Release 2: Generate Random Test Data
