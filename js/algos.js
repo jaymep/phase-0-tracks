@@ -14,38 +14,38 @@
 //   otherwise repeat until match is found or no more keys to compare
 //   if no keys match, return false
 
-Release 2: Generate Random Test Data
-  the given integer is set as a variable for array length
-  create an empty data array variable
-  set alphabet as an array variable
-  loop as many times as array length
-    generate a random number (1-10) for string length
-      loop as many times as string length
-        set string as empty array
-        generate random number (0-25) for letter index
-        add letter to string array
-      add string to data array
+// Release 2: Generate Random Test Data
+  // the given integer is set as a variable for array length
+  // create an empty data array variable
+  // set alphabet as an array variable
+  // loop as many times as array length
+  //   generate a random number (1-10) for string length
+  //     loop as many times as string length
+  //       set string as empty array
+  //       generate random number (0-25) for letter index
+  //       add letter to string array
+  //     add string to data array
 
 // FUNCTION CODE
-// function maxLength(arr) {
-//   var newArr = [];
-//   for (var i = 0, len = arr.length; i < len; i++) {
-//     newArr.push(arr[i].length);
-//   }
-//   var maxLength = Math.max.apply(Math, newArr);
-//   var maxLengthIndex = newArr.indexOf(maxLength);
-//   console.log(arr[maxLengthIndex]);
-// }
+function maxLength(arr) {
+  var newArr = [];
+  for (var i = 0, len = arr.length; i < len; i++) {
+    newArr.push(arr[i].length);
+  }
+  var maxLength = Math.max.apply(Math, newArr);
+  var maxLengthIndex = newArr.indexOf(maxLength);
+  return arr[maxLengthIndex];
+}
 
-// function findMatch(obj1,obj2) {
-//   for (var i = 0; i < Object.keys(obj1).length; i++) {
-//     if (Object.keys(obj1)[i] === Object.keys(obj2)[i]) {
-//       if (obj1[Object.keys(obj1)[i]] === obj2[Object.keys(obj2)[i]]) {
-//        return true;
-//       } 
-//     }   
-//   }  return false;
-// }
+function findMatch(obj1,obj2) {
+  for (var i = 0; i < Object.keys(obj1).length; i++) {
+    if (Object.keys(obj1)[i] === Object.keys(obj2)[i]) {
+      if (obj1[Object.keys(obj1)[i]] === obj2[Object.keys(obj2)[i]]) {
+       return true;
+      } 
+    }   
+  }  return false;
+}
 
 function createData(setLength) {
   var dataSet = [];
@@ -58,9 +58,8 @@ function createData(setLength) {
     for (var j = 0; j < Math.floor(Math.random() * (10 - 1) + 1); j++) {
       dataString = dataString + alphabet[Math.floor(Math.random() * (25 - 0) + 0)];
       }    dataSet.push(dataString);
-  } console.log(dataSet);
+  } return dataSet;
 }
-
 // DRIVER CODE
 // Release 0: Find the Longest Phrase
   // console.log(newArr); // captured values
