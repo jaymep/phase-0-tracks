@@ -16,9 +16,9 @@
 
 Release 2: Generate Random Test Data
   the given integer is set as a variable for array length
-  create an empty data array
+  create an empty data array variable
+  set alphabet as an array variable
   loop as many times as array length
-    set alphabet as an array
     generate a random number (1-10) for string length
       loop as many times as string length
         set string as empty array
@@ -50,7 +50,14 @@ Release 2: Generate Random Test Data
 function createData(setLength) {
   var dataSet = [];
   var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-  
+  // var alphabetIndex = Math.floor(Math.random() * (25 - 0) + 0); // do  not set, will not randomize if set
+  var stringLength = Math.floor(Math.random() * (10 - 1) + 1);
+  var dataString = '';
+  for (var i = 0; i < setLength; i ++) {
+    for (var j = 0; j < stringLength; j++) {
+      dataString = dataString + alphabet[Math.floor(Math.random() * (25 - 0) + 0)];
+      }    dataSet.push(dataString);
+  } console.log(dataSet);
 }
 
 // DRIVER CODE
@@ -58,7 +65,7 @@ function createData(setLength) {
   // console.log(newArr); // captured values
   // console.log(maxLength); // length of longest string 
   // console.log(maxLengthIndex); // position of longest string
-  // console.log(arr[maxLengthIndex]); //phrase at correspinding striggred
+  // console.log(arr[maxLengthIndex]); //phrase at corresponding index
 
   // maxLength(["long phrase","longest phrase","longer phrase"]);
   // // return "longest phrase"
@@ -76,7 +83,7 @@ function createData(setLength) {
   // console.log(findMatch(obj1,obj2));
 
   // var obj3 = {name: "Ryan", age: 24}; 
-  // var obj4 = {named: "Ryan", age: 37};
+  // var obj4 = {name: "Ryan", age: 37};
   // console.log(findMatch(obj3,obj4));
 
   // var obj5 = {color: "green", vehicle: "jeep", seats: 5}; 
