@@ -92,7 +92,7 @@ function createData(setLength) {
 
 // Release 2: Generate Random Test Data
   // createData(7);
-  // 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result
+  // n10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result
   // for (var i = 0; i < 10; i ++) {
   //   arr = createData(3);
   //   console.log(arr);
