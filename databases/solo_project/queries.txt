@@ -1,0 +1,581 @@
+-- Display the information in one table (either table is fine).
+SELECT * FROM company;
+1|Blue Moon Fiber Arts
+2|America's Alpaca
+3|Bear Brand
+4|Bernat
+5|Black Oak
+6|Brown Sheep
+7|Caron
+8|Crystal Palace
+9|Dawn Wintuk
+10|Debbie Bliss
+11|Elsa Williams
+12|Farmhouse Yarns
+13|Froehlich
+14|Green Mountain Spinnery
+15|Independent Spinner
+16|La Grossa
+17|Lily
+18|Lion Brand
+19|Passport Yarn Co.
+20|Patons
+21|Phentex
+22|Plymouth Yarn
+23|Red Heart
+24|Reynolds
+25|Rowan
+26|Schoeller Stahl
+27|Sensations
+28|Spinnerin
+29|Tahki
+30|Unknown
+31|Zitron
+32|Zwerger Garn
+
+-- Update an item that meets some condition (you can choose a condition that makes sense).
+-- Correct yarn name
+UPDATE yarn SET name="Simply Soft" where name="Simple Soft";
+-- no output
+
+-- to check update:
+SELECT * FROM yarn where company_id=7;
+99|Dazzleaire|150|Shaded Ombre|false|7
+100|Simply Soft|200|Brocade Print|false|7
+101|Simply Soft|150|Country Blue|false|7
+102|Simply Soft|150|English Rose|false|7
+103|Wintuk|150|Colonial Blue|false|7
+
+-- Display the information in both tables using one query.
+SELECT * from company, yarn WHERE company.id = yarn.company_id;
+1|Blue Moon Fiber Arts|1|Crackpaca|260|Bleck|true|1
+1|Blue Moon Fiber Arts|2|Crackpaca|260|Blue for Ewe|true|1
+1|Blue Moon Fiber Arts|3|Crackpaca|260|Blue Moonstone|true|1
+1|Blue Moon Fiber Arts|4|Crackpaca|260|Boysenberry|true|1
+1|Blue Moon Fiber Arts|5|Crackpaca|260|Branwen|true|1
+1|Blue Moon Fiber Arts|6|Crackpaca|260|Brick|true|1
+1|Blue Moon Fiber Arts|7|Crackpaca|260|Bubble Bliss|true|1
+1|Blue Moon Fiber Arts|8|Crackpaca|260|Bubble Guppies|true|1
+1|Blue Moon Fiber Arts|9|Crackpaca|260|Buttah|true|1
+1|Blue Moon Fiber Arts|10|Crackpaca|260|Byron Lee Tipsy|true|1
+1|Blue Moon Fiber Arts|11|Crackpaca|260|Candy Cane Tipsy|true|1
+1|Blue Moon Fiber Arts|12|Crackpaca|260|Cariblue|true|1
+1|Blue Moon Fiber Arts|13|Crackpaca|260|Cattywampus|true|1
+1|Blue Moon Fiber Arts|14|Crackpaca|260|Chana Masala|true|1
+1|Blue Moon Fiber Arts|15|Crackpaca|260|Chestnutty|true|1
+1|Blue Moon Fiber Arts|16|Crackpaca|260|Chillaxin|true|1
+1|Blue Moon Fiber Arts|17|Crackpaca|260|China Rose|true|1
+1|Blue Moon Fiber Arts|18|Crackpaca|260|Ciruela|true|1
+1|Blue Moon Fiber Arts|19|Crackpaca|260|Copperline|true|1
+1|Blue Moon Fiber Arts|20|Crackpaca|260|Coral|true|1
+1|Blue Moon Fiber Arts|21|YAKSI|250|Apron Strings|true|1
+1|Blue Moon Fiber Arts|22|YAKSI|250|Birthday Sprinkles|true|1
+1|Blue Moon Fiber Arts|23|YAKSI|250|Tanzanite|true|1
+1|Blue Moon Fiber Arts|24|YAKSI|250|Dearly Beloved.|true|1
+1|Blue Moon Fiber Arts|25|YAKSI|250|Debra's Magic Blue|true|1
+1|Blue Moon Fiber Arts|26|YAKSI|250|Deep Purple|true|1
+1|Blue Moon Fiber Arts|27|YAKSI|250|Delirium|true|1
+1|Blue Moon Fiber Arts|28|YAKSI|250|DepraveDyer|true|1
+1|Blue Moon Fiber Arts|29|YAKSI|250|Desert Green|true|1
+1|Blue Moon Fiber Arts|30|YAKSI|250|Dreamsicle Orange|true|1
+1|Blue Moon Fiber Arts|31|YAKSI|250|Enchanted Forest|true|1
+1|Blue Moon Fiber Arts|32|YAKSI|250|Fancy-pants Fuchsia|true|1
+1|Blue Moon Fiber Arts|33|YAKSI|250|Flamingo Feet|true|1
+1|Blue Moon Fiber Arts|34|YAKSI|250|Fuchsia Rose|true|1
+1|Blue Moon Fiber Arts|35|YAKSI|250|Fuzzy Peach Specks|true|1
+1|Blue Moon Fiber Arts|36|YAKSI|250|Gin Blossoms|true|1
+1|Blue Moon Fiber Arts|37|YAKSI|250|Going to Seed|true|1
+1|Blue Moon Fiber Arts|38|YAKSI|250|Gran's Candy Dish|true|1
+1|Blue Moon Fiber Arts|39|YAKSI|250|Heckley Speckley|true|1
+1|Blue Moon Fiber Arts|40|YAKSI|250|Heirloom Tomato JAM|true|1
+1|Blue Moon Fiber Arts|41|YAKSI|250|Apron Strings|true|1
+1|Blue Moon Fiber Arts|42|YAKSI|250|Apron Strings|true|1
+1|Blue Moon Fiber Arts|43|Featherlight|430|Say Nevermore|true|1
+1|Blue Moon Fiber Arts|44|Featherlight|430|.com|true|1
+1|Blue Moon Fiber Arts|45|Featherlight|430|24 Karat|true|1
+1|Blue Moon Fiber Arts|46|Featherlight|430|A Hazy Shade of Blue|true|1
+1|Blue Moon Fiber Arts|47|Featherlight|430|A Speck of Autumn|true|1
+1|Blue Moon Fiber Arts|48|Featherlight|430|Antiquated System|true|1
+1|Blue Moon Fiber Arts|49|Featherlight|430|Peachy Keen|true|1
+1|Blue Moon Fiber Arts|50|Featherlight|430|Aquarius|true|1
+1|Blue Moon Fiber Arts|51|Featherlight|430|Aubergenius|true|1
+1|Blue Moon Fiber Arts|52|Featherlight|430|Belle Rae Tipsy|true|1
+1|Blue Moon Fiber Arts|53|Featherlight|430|Beryl|true|1
+1|Blue Moon Fiber Arts|54|Featherlight|430|Bet you thought this skein was about
+you.|true|1
+1|Blue Moon Fiber Arts|55|Featherlight|430|Big Brain Blue|true|1
+1|Blue Moon Fiber Arts|56|Featherlight|430|Bitter Sweet|true|1
+1|Blue Moon Fiber Arts|57|Featherlight|430|Black Dragon Wisteria|true|1
+1|Blue Moon Fiber Arts|58|Featherlight|430|Black Onyx|true|1
+1|Blue Moon Fiber Arts|59|Featherlight|430|Blackberry Birthday|true|1
+1|Blue Moon Fiber Arts|60|Featherlight|430|Blackbird|true|1
+1|Blue Moon Fiber Arts|61|Featherlight|430|Bladderwrack on the Rocks|true|1
+1|Blue Moon Fiber Arts|62|Featherlight|430|Blade Runner|true|1
+1|Blue Moon Fiber Arts|63|Luscious Silk|218|Mermaid Tears|false|1
+1|Blue Moon Fiber Arts|64|Luscious Silk|218|Mica|false|1
+1|Blue Moon Fiber Arts|65|Luscious Silk|218|Midsummers Night|false|1
+1|Blue Moon Fiber Arts|66|Luscious Silk|218|Moirae|false|1
+1|Blue Moon Fiber Arts|67|Luscious Silk|218|Mossay|false|1
+1|Blue Moon Fiber Arts|68|Luscious Silk|218|Motley Hue|false|1
+1|Blue Moon Fiber Arts|69|Luscious Silk|218|Mulberry|false|1
+1|Blue Moon Fiber Arts|70|Luscious Silk|218|Mustang Sally|false|1
+1|Blue Moon Fiber Arts|71|Luscious Silk|218|Narikama|false|1
+1|Blue Moon Fiber Arts|72|Luscious Silk|218|Neptune|false|1
+1|Blue Moon Fiber Arts|73|Luscious Silk|218|Nudie Patootie|false|1
+1|Blue Moon Fiber Arts|74|Luscious Silk|218|Nyame|false|1
+1|Blue Moon Fiber Arts|75|Luscious Silk|218|Obsidian|false|1
+1|Blue Moon Fiber Arts|76|Luscious Silk|218|Orchid Queen|false|1
+1|Blue Moon Fiber Arts|77|Luscious Silk|218|Oregon Red Clover Honey|false|1
+1|Blue Moon Fiber Arts|78|Luscious Silk|218|Orphan Fledge Indra|false|1
+1|Blue Moon Fiber Arts|79|Luscious Silk|218|Pallas Athena|false|1
+1|Blue Moon Fiber Arts|80|Luscious Silk|218|Passive Aggressive Green|false|1
+1|Blue Moon Fiber Arts|81|Luscious Silk|218|PDX Rose City|false|1
+1|Blue Moon Fiber Arts|82|Luscious Silk|218|Peepee Weepkins|false|1
+2|America's Alpaca|83|Classic Lite|182|Light Brown|false|2
+3|Bear Brand|84|Vita-Spun|31.25|Red|true|3
+4|Bernat|85|Cottontots|150|Pinks|false|4
+4|Bernat|86|Handicrafter Cotton|80|Apple Green|false|4
+4|Bernat|87|Handicrafter Cotton|80|Many Colors|false|4
+4|Bernat|88|Handicrafter Cotton|500|Peach Varigated|false|4
+4|Bernat|89|Handicrafter Cotton|500|Pink/Blue/Green Varigated|false|4
+4|Bernat|90|Handicrafter Cotton|719|Purple/White/Green|false|4
+4|Bernat|91|Softee Baby|455|Baby Blue|false|4
+4|Bernat|92|Sparkle|205|White|false|4
+4|Bernat|93|Ultrawash Worsted|110|Grey|true|4
+5|Black Oak|94|Fisherman's Bulky|80|Bark|true|5
+5|Black Oak|95|Fisherman's Bulky|80|Light Bark|true|5
+5|Black Oak|96|Fisherman's Wool|183|Rust Brown|true|5
+6|Brown Sheep|97|Lamb's Pride Bulky|125|New Dune - Beige|true|6
+6|Brown Sheep|98|Lamb's Pride Bulky|125|Purple|true|6
+7|Caron|99|Dazzleaire|150|Shaded Ombre|false|7
+7|Caron|100|Simply Soft|200|Brocade Print|false|7
+7|Caron|101|Simply Soft|150|Country Blue|false|7
+7|Caron|102|Simply Soft|150|English Rose|false|7
+7|Caron|103|Wintuk|150|Colonial Blue|false|7
+8|Crystal Palace|104|Splash|85|Blues|false|8
+9|Dawn Wintuk|105|Baby Yarn|250|Baby Green|false|9
+10|Debbie Bliss|106|Cashmerino Aran|100|Blue|true|10
+11|Elsa Williams|107|Taspestry Wool|40|Various Colors|true|11
+12|Farmhouse Yarns|108|Roxanne's Mohair|200|Grapes on the Vine|true|12
+13|Froehlich|109|Blauband|192|Grey|true|13
+13|Froehlich|110|Die Tolle Wolle|175|Blues|true|13
+13|Froehlich|111|Die Tolle Wolle|175|Fushias|true|13
+13|Froehlich|112|Die Tolle Wolle|175|Light Fushias|true|13
+14|Green Mountain Spinnery|113|Mountain Mohair|140|Blue Violet|true|14
+15|Independent Spinner|114|Worsted Weight|250|Blue|false|15
+15|Independent Spinner|115|Worsted Weight|250|Natural|false|15
+16|La Grossa|116|Meilenweit|230|Blue/Yellow/Black|true|16
+17|Lily|117|Naturalee|175|Turquoise|false|17
+17|Lily|118|Sugar N Cream|120|Many Colors|false|17
+18|Lion Brand|119|Fisherman's Wool|465|Natural|true|18
+18|Lion Brand|120|Incredible|110|Copper Penny|false|18
+18|Lion Brand|121|Incredible|110|Rainbow|false|18
+18|Lion Brand|122|Trellis|115|Stained Glass|false|18
+19|Passport Yarn Co.|123|Venice|176|Baby Blue|true|19
+20|Patons|124|Carmen|64|Fushia|false|20
+20|Patons|125|Kroy|192|Black|true|20
+20|Patons|126|Kroy|192|Candy Kisses|true|20
+20|Patons|127|Kroy|192|Fancy Free|true|20
+20|Patons|128|Kroy|192|Winter Eclipse|true|20
+20|Patons|129|Shetland Ragg K.W.|227|Grey/White Twist|true|20
+20|Patons|130|Shetland Ragg K.W.|227|Purple|true|20
+21|Phentex|131|Galaxie|102|Aqua|true|21
+22|Plymouth Yarn|132|Encore|200|Blues|true|22
+23|Red Heart|133|Baby Sport|480|Rainbow Sherbert|false|23
+23|Red Heart|134|Cotton Twist|178|Lavender|false|23
+23|Red Heart|135|Cotton Twist|178|Light Blue|false|23
+23|Red Heart|136|Cotton Twist|178|Sage Green|false|23
+23|Red Heart|137|Kiss|83|Gem|false|23
+23|Red Heart|138|Kiss|83|Pink|false|23
+23|Red Heart|139|Plush|278|Light Gold|false|23
+23|Red Heart|140|Plush|278|Sage Green|false|23
+23|Red Heart|141|Soft|204|Plumrose|false|23
+23|Red Heart|142|Super Fingering|150|White|true|23
+23|Red Heart|143|Tiki|157|Cheery|false|23
+23|Red Heart|144|Tiki|157|Green|false|23
+23|Red Heart|145|Tweed|213|Mulberry|false|23
+24|Reynolds|146|Dover|82|Navy Blue|true|24
+25|Rowan|147|Designer DK|125|Beige|true|25
+25|Rowan|148|Designer DK|125|Cornflower Blue|true|25
+25|Rowan|149|Designer DK|125|Green|true|25
+25|Rowan|150|Designer DK|125|Light Grey|true|25
+25|Rowan|151|Designer DK|125|Purple|true|25
+25|Rowan|152|Designer DK|125|Rust|true|25
+26|Schoeller Stahl|153|Fortissma Colori Socka Color|137|Mustard/Rust/Brown|true|
+26
+27|Sensations|154|Angel Hair|120|Berry|true|27
+28|Spinnerin|155|Ambralon|150|White|true|28
+29|Tahki|156|Donegal Tweed|183|Dark Brown|true|29
+29|Tahki|157|Donegal Tweed|183|Mustard|true|29
+29|Tahki|158|Donegal Tweed|183|Rust|true|29
+30|Unknown|159|Loopy Mohair|75|Black|false|30
+30|Unknown|160|Worsted Weight|225|Grey|true|30
+31|Zitron|161|Trekking XXL|459|Varigated|true|31
+32|Zwerger Garn|162|Opal|465|Pink/Peach/Grey|true|32
+
+-- Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+-- Which yarns should be avoided if you're allergic to wool?
+SELECT company.name, yarn.name, yarn.contains_wool FROM company JOIN yarn ON company.id = yarn.company_id;
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|Crackpaca|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|YAKSI|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Featherlight|true
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+Blue Moon Fiber Arts|Luscious Silk|false
+America's Alpaca|Classic Lite|false
+Bear Brand|Vita-Spun|true
+Bernat|Cottontots|false
+Bernat|Handicrafter Cotton|false
+Bernat|Handicrafter Cotton|false
+Bernat|Handicrafter Cotton|false
+Bernat|Handicrafter Cotton|false
+Bernat|Handicrafter Cotton|false
+Bernat|Softee Baby|false
+Bernat|Sparkle|false
+Bernat|Ultrawash Worsted|true
+Black Oak|Fisherman's Bulky|true
+Black Oak|Fisherman's Bulky|true
+Black Oak|Fisherman's Wool|true
+Brown Sheep|Lamb's Pride Bulky|true
+Brown Sheep|Lamb's Pride Bulky|true
+Caron|Dazzleaire|false
+Caron|Simply Soft|false
+Caron|Simply Soft|false
+Caron|Simply Soft|false
+Caron|Wintuk|false
+Crystal Palace|Splash|false
+Dawn Wintuk|Baby Yarn|false
+Debbie Bliss|Cashmerino Aran|true
+Elsa Williams|Taspestry Wool|true
+Farmhouse Yarns|Roxanne's Mohair|true
+Froehlich|Blauband|true
+Froehlich|Die Tolle Wolle|true
+Froehlich|Die Tolle Wolle|true
+Froehlich|Die Tolle Wolle|true
+Green Mountain Spinnery|Mountain Mohair|true
+Independent Spinner|Worsted Weight|false
+Independent Spinner|Worsted Weight|false
+La Grossa|Meilenweit|true
+Lily|Naturalee|false
+Lily|Sugar N Cream|false
+Lion Brand|Fisherman's Wool|true
+Lion Brand|Incredible|false
+Lion Brand|Incredible|false
+Lion Brand|Trellis|false
+Passport Yarn Co.|Venice|true
+Patons|Carmen|false
+Patons|Kroy|true
+Patons|Kroy|true
+Patons|Kroy|true
+Patons|Kroy|true
+Patons|Shetland Ragg K.W.|true
+Patons|Shetland Ragg K.W.|true
+Phentex|Galaxie|true
+Plymouth Yarn|Encore|true
+Red Heart|Baby Sport|false
+Red Heart|Cotton Twist|false
+Red Heart|Cotton Twist|false
+Red Heart|Cotton Twist|false
+Red Heart|Kiss|false
+Red Heart|Kiss|false
+Red Heart|Plush|false
+Red Heart|Plush|false
+Red Heart|Soft|false
+Red Heart|Super Fingering|true
+Red Heart|Tiki|false
+Red Heart|Tiki|false
+Red Heart|Tweed|false
+Reynolds|Dover|true
+Rowan|Designer DK|true
+Rowan|Designer DK|true
+Rowan|Designer DK|true
+Rowan|Designer DK|true
+Rowan|Designer DK|true
+Rowan|Designer DK|true
+Schoeller Stahl|Fortissma Colori Socka Color|true
+Sensations|Angel Hair|true
+Spinnerin|Ambralon|true
+Tahki|Donegal Tweed|true
+Tahki|Donegal Tweed|true
+Tahki|Donegal Tweed|true
+Unknown|Loopy Mohair|false
+Unknown|Worsted Weight|true
+Zitron|Trekking XXL|true
+Zwerger Garn|Opal|true
+
+-- Delete an item that meets some condition (you can choose a condition that makes sense).
+-- You made a thing! Now to update the db by removing yarn used.
+DELETE FROM yarn WHERE company_id=15;
+-- no output
+
+-- to check update:
+SELECT company.name, yarn.name, yarn.color FROM company JOIN yarn ON com
+pany.id = yarn.company_id;
+Blue Moon Fiber Arts|Crackpaca|Bleck
+Blue Moon Fiber Arts|Crackpaca|Blue for Ewe
+Blue Moon Fiber Arts|Crackpaca|Blue Moonstone
+Blue Moon Fiber Arts|Crackpaca|Boysenberry
+Blue Moon Fiber Arts|Crackpaca|Branwen
+Blue Moon Fiber Arts|Crackpaca|Brick
+Blue Moon Fiber Arts|Crackpaca|Bubble Bliss
+Blue Moon Fiber Arts|Crackpaca|Bubble Guppies
+Blue Moon Fiber Arts|Crackpaca|Buttah
+Blue Moon Fiber Arts|Crackpaca|Byron Lee Tipsy
+Blue Moon Fiber Arts|Crackpaca|Candy Cane Tipsy
+Blue Moon Fiber Arts|Crackpaca|Cariblue
+Blue Moon Fiber Arts|Crackpaca|Cattywampus
+Blue Moon Fiber Arts|Crackpaca|Chana Masala
+Blue Moon Fiber Arts|Crackpaca|Chestnutty
+Blue Moon Fiber Arts|Crackpaca|Chillaxin
+Blue Moon Fiber Arts|Crackpaca|China Rose
+Blue Moon Fiber Arts|Crackpaca|Ciruela
+Blue Moon Fiber Arts|Crackpaca|Copperline
+Blue Moon Fiber Arts|Crackpaca|Coral
+Blue Moon Fiber Arts|YAKSI|Apron Strings
+Blue Moon Fiber Arts|YAKSI|Birthday Sprinkles
+Blue Moon Fiber Arts|YAKSI|Tanzanite
+Blue Moon Fiber Arts|YAKSI|Dearly Beloved.
+Blue Moon Fiber Arts|YAKSI|Debra's Magic Blue
+Blue Moon Fiber Arts|YAKSI|Deep Purple
+Blue Moon Fiber Arts|YAKSI|Delirium
+Blue Moon Fiber Arts|YAKSI|DepraveDyer
+Blue Moon Fiber Arts|YAKSI|Desert Green
+Blue Moon Fiber Arts|YAKSI|Dreamsicle Orange
+Blue Moon Fiber Arts|YAKSI|Enchanted Forest
+Blue Moon Fiber Arts|YAKSI|Fancy-pants Fuchsia
+Blue Moon Fiber Arts|YAKSI|Flamingo Feet
+Blue Moon Fiber Arts|YAKSI|Fuchsia Rose
+Blue Moon Fiber Arts|YAKSI|Fuzzy Peach Specks
+Blue Moon Fiber Arts|YAKSI|Gin Blossoms
+Blue Moon Fiber Arts|YAKSI|Going to Seed
+Blue Moon Fiber Arts|YAKSI|Gran's Candy Dish
+Blue Moon Fiber Arts|YAKSI|Heckley Speckley
+Blue Moon Fiber Arts|YAKSI|Heirloom Tomato JAM
+Blue Moon Fiber Arts|YAKSI|Apron Strings
+Blue Moon Fiber Arts|YAKSI|Apron Strings
+Blue Moon Fiber Arts|Featherlight|Say Nevermore
+Blue Moon Fiber Arts|Featherlight|.com
+Blue Moon Fiber Arts|Featherlight|24 Karat
+Blue Moon Fiber Arts|Featherlight|A Hazy Shade of Blue
+Blue Moon Fiber Arts|Featherlight|A Speck of Autumn
+Blue Moon Fiber Arts|Featherlight|Antiquated System
+Blue Moon Fiber Arts|Featherlight|Peachy Keen
+Blue Moon Fiber Arts|Featherlight|Aquarius
+Blue Moon Fiber Arts|Featherlight|Aubergenius
+Blue Moon Fiber Arts|Featherlight|Belle Rae Tipsy
+Blue Moon Fiber Arts|Featherlight|Beryl
+Blue Moon Fiber Arts|Featherlight|Bet you thought this skein was about you.
+Blue Moon Fiber Arts|Featherlight|Big Brain Blue
+Blue Moon Fiber Arts|Featherlight|Bitter Sweet
+Blue Moon Fiber Arts|Featherlight|Black Dragon Wisteria
+Blue Moon Fiber Arts|Featherlight|Black Onyx
+Blue Moon Fiber Arts|Featherlight|Blackberry Birthday
+Blue Moon Fiber Arts|Featherlight|Blackbird
+Blue Moon Fiber Arts|Featherlight|Bladderwrack on the Rocks
+Blue Moon Fiber Arts|Featherlight|Blade Runner
+Blue Moon Fiber Arts|Luscious Silk|Mermaid Tears
+Blue Moon Fiber Arts|Luscious Silk|Mica
+Blue Moon Fiber Arts|Luscious Silk|Midsummers Night
+Blue Moon Fiber Arts|Luscious Silk|Moirae
+Blue Moon Fiber Arts|Luscious Silk|Mossay
+Blue Moon Fiber Arts|Luscious Silk|Motley Hue
+Blue Moon Fiber Arts|Luscious Silk|Mulberry
+Blue Moon Fiber Arts|Luscious Silk|Mustang Sally
+Blue Moon Fiber Arts|Luscious Silk|Narikama
+Blue Moon Fiber Arts|Luscious Silk|Neptune
+Blue Moon Fiber Arts|Luscious Silk|Nudie Patootie
+Blue Moon Fiber Arts|Luscious Silk|Nyame
+Blue Moon Fiber Arts|Luscious Silk|Obsidian
+Blue Moon Fiber Arts|Luscious Silk|Orchid Queen
+Blue Moon Fiber Arts|Luscious Silk|Oregon Red Clover Honey
+Blue Moon Fiber Arts|Luscious Silk|Orphan Fledge Indra
+Blue Moon Fiber Arts|Luscious Silk|Pallas Athena
+Blue Moon Fiber Arts|Luscious Silk|Passive Aggressive Green
+Blue Moon Fiber Arts|Luscious Silk|PDX Rose City
+Blue Moon Fiber Arts|Luscious Silk|Peepee Weepkins
+America's Alpaca|Classic Lite|Light Brown
+Bear Brand|Vita-Spun|Red
+Bernat|Cottontots|Pinks
+Bernat|Handicrafter Cotton|Apple Green
+Bernat|Handicrafter Cotton|Many Colors
+Bernat|Handicrafter Cotton|Peach Varigated
+Bernat|Handicrafter Cotton|Pink/Blue/Green Varigated
+Bernat|Handicrafter Cotton|Purple/White/Green
+Bernat|Softee Baby|Baby Blue
+Bernat|Sparkle|White
+Bernat|Ultrawash Worsted|Grey
+Black Oak|Fisherman's Bulky|Bark
+Black Oak|Fisherman's Bulky|Light Bark
+Black Oak|Fisherman's Wool|Rust Brown
+Brown Sheep|Lamb's Pride Bulky|New Dune - Beige
+Brown Sheep|Lamb's Pride Bulky|Purple
+Caron|Dazzleaire|Shaded Ombre
+Caron|Simply Soft|Brocade Print
+Caron|Simply Soft|Country Blue
+Caron|Simply Soft|English Rose
+Caron|Wintuk|Colonial Blue
+Crystal Palace|Splash|Blues
+Dawn Wintuk|Baby Yarn|Baby Green
+Debbie Bliss|Cashmerino Aran|Blue
+Elsa Williams|Taspestry Wool|Various Colors
+Farmhouse Yarns|Roxanne's Mohair|Grapes on the Vine
+Froehlich|Blauband|Grey
+Froehlich|Die Tolle Wolle|Blues
+Froehlich|Die Tolle Wolle|Fushias
+Froehlich|Die Tolle Wolle|Light Fushias
+Green Mountain Spinnery|Mountain Mohair|Blue Violet
+La Grossa|Meilenweit|Blue/Yellow/Black
+Lily|Naturalee|Turquoise
+Lily|Sugar N Cream|Many Colors
+Lion Brand|Fisherman's Wool|Natural
+Lion Brand|Incredible|Copper Penny
+Lion Brand|Incredible|Rainbow
+Lion Brand|Trellis|Stained Glass
+Passport Yarn Co.|Venice|Baby Blue
+Patons|Carmen|Fushia
+Patons|Kroy|Black
+Patons|Kroy|Candy Kisses
+Patons|Kroy|Fancy Free
+Patons|Kroy|Winter Eclipse
+Patons|Shetland Ragg K.W.|Grey/White Twist
+Patons|Shetland Ragg K.W.|Purple
+Phentex|Galaxie|Aqua
+Plymouth Yarn|Encore|Blues
+Red Heart|Baby Sport|Rainbow Sherbert
+Red Heart|Cotton Twist|Lavender
+Red Heart|Cotton Twist|Light Blue
+Red Heart|Cotton Twist|Sage Green
+Red Heart|Kiss|Gem
+Red Heart|Kiss|Pink
+Red Heart|Plush|Light Gold
+Red Heart|Plush|Sage Green
+Red Heart|Soft|Plumrose
+Red Heart|Super Fingering|White
+Red Heart|Tiki|Cheery
+Red Heart|Tiki|Green
+Red Heart|Tweed|Mulberry
+Reynolds|Dover|Navy Blue
+Rowan|Designer DK|Beige
+Rowan|Designer DK|Cornflower Blue
+Rowan|Designer DK|Green
+Rowan|Designer DK|Light Grey
+Rowan|Designer DK|Purple
+Rowan|Designer DK|Rust
+Schoeller Stahl|Fortissma Colori Socka Color|Mustard/Rust/Brown
+Sensations|Angel Hair|Berry
+Spinnerin|Ambralon|White
+Tahki|Donegal Tweed|Dark Brown
+Tahki|Donegal Tweed|Mustard
+Tahki|Donegal Tweed|Rust
+Unknown|Loopy Mohair|Black
+Unknown|Worsted Weight|Grey
+Zitron|Trekking XXL|Varigated
+Zwerger Garn|Opal|Pink/Peach/Grey
+
+-- Exploring Joins (joins above are INNER JOINs)
+-- Which yarns are wool free?
+SELECT DISTINCT company.name, yarn.name FROM company LEFT JOIN yarn ON company.id = yarn.company_id WHERE yarn.contains_wool="false";
+Blue Moon Fiber Arts|Luscious Silk
+America's Alpaca|Classic Lite
+Bernat|Cottontots
+Bernat|Handicrafter Cotton
+Bernat|Softee Baby
+Bernat|Sparkle
+Caron|Dazzleaire
+Caron|Simply Soft
+Caron|Wintuk
+Crystal Palace|Splash
+Dawn Wintuk|Baby Yarn
+Lily|Naturalee
+Lily|Sugar N Cream
+Lion Brand|Incredible
+Lion Brand|Trellis
+Patons|Carmen
+Red Heart|Baby Sport
+Red Heart|Cotton Twist
+Red Heart|Kiss
+Red Heart|Plush
+Red Heart|Soft
+Red Heart|Tiki
+Red Heart|Tweed
+Unknown|Loopy Mohair
+
+SELECT company.name, yarn.name FROM company RIGHT OUTER JOIN yarn ON com
+pany.id = yarn.company_id WHERE yarn.contains_wool="false";
+-- Error: RIGHT and FULL OUTER JOINs are not currently supported
