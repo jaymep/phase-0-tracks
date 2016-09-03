@@ -12,3 +12,25 @@
 #     per specified period
 #   Add tables; complexity to database
 
+# require gems for database and data generation
+require 'sqlite3'
+require 'faker'
+
+# create SQLite3 database
+db = SQLite3::Database.new("bellydance.db")
+db.results_as_hash = true
+
+create_table_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS gig_tracker(
+  id INTEGER
+  date DATE,
+  time TIME,
+  venue_name VARCHAR(255),
+  venue_address VARCHAR(255),
+  phone_number VARCHAR(255),
+  contact_person VARCHAR(255),
+  fee INTEGER,
+  deposit_paid BOOLEAN,
+  notes VARCHAR(255)
+  )
+SQL

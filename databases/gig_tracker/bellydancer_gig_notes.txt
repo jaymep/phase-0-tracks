@@ -95,17 +95,20 @@ Create other SQLite3 tables
     style
     color
     costume
-    props
-    playlist
-  Playlist
+    props foreign key
+    playlist foreign key
+  Playlist (need to think about this more)
     id INTEGER PRIMARY KEY
     style
-    music_order
-    music_artist
-    music_title
-    music_duration
+    music foreign key (skip info fields and call from music table)
+      music_order
+      music_artist
+      music_title
+      music_duration
 
 Define methods
+  Create database
+  Create table
   Create gig
   Modify gig
   Print lists
