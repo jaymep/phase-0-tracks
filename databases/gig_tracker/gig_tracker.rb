@@ -24,7 +24,7 @@ db.results_as_hash = true
 
 create_table = <<-SQL
   CREATE TABLE IF NOT EXISTS gig_tracker(
-  id INTEGER
+  id INTEGER PRIMARY KEY,
   date DATE,
   time TIME,
   venue_name VARCHAR(255),
@@ -39,24 +39,25 @@ SQL
 
 db.execute(create_table)
 
-def book_gig(db, date, time, venue_name, address, phone_number, contact_name, fee, deposit_paid, notes)
-  db.execute("INSERT INTO gig_tracker (date, time, venue_name, address, phone_number, contact_name, fee, deposit_paid, notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [date, time, venue_name, address, phone_number, contact_name, fee, deposit_paid, notes])
+def book_gig(db, date, time, venue_name, venue_address, phone_number, contact_name, fee, deposit_paid, notes)
+  db.execute("INSERT INTO gig_tracker (date, time, venue_name, venue_address, phone_number, contact_name, fee, deposit_paid, notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [date, time, venue_name, venue_address, phone_number, contact_name, fee, deposit_paid, notes])
 end
 
 potential_notes = ["style: Gypsy", "style: Turkish", "style: Egyptian", "style: American Cabaret", "style: Persian", "style: Tribal Fusion", "style: Latin Fusion", "props: finger cymbals", "props: rectangular veil", "props: half-circle veil", "props: veil fans", "props: sword", "props: cane", "props: candle", "event: Wedding", "event: Rehearsal Dinner", "event: Bachelorette Party", "event: Birthday", "event: Bar Mitzvah/Bat Mitzvah", "event: Sweet 16th", "event: Corporate event", "event: Staff Party", "event: Business Function", "event: Convention", "event: Bridal Shower", "event: Baby Shower", "event: Anniversary", "event: Resort/Hotel Party", "event: Theme party", "event: Senior Home event", "event: Educational event", "event: Promotional event", "event: Grand Openings", "event: Fundraiser", "event: Art Shows", "event: Housewarming", "event: Graduation", "event: Christmas Party", "event: New Year's Party", "outfit: black", "outfit: white", "outfit: blue", "outfit: red", "outfit: green", "outfit: gold", "outfit: silver", "outfit: pink", "outfit: purple", "outfit: burgundy"]
+
 potential_times = %w[1pm 2pm 3pm 4pm 5pm 6pm 7pm 8pm 9pm 11am 12pm]
 
 # 20.times do
   book_gig(
     db, 
-    Faker::Date.between(8.months.ago, 2.months.from_now), 
+    Faker::Date.backward(180).to_s,
     potential_times.sample, 
     Faker::Company.name, 
-    Faker::Address.street_name, 
+    Faker::Address.street_address, 
     Faker::PhoneNumber.phone_number, 
     Faker::Name.name, 
     rand(250-500), 
-    [true, false].sample, 
+    [true, false].sample.to_s, 
     potential_notes.sample
     )
 # end
