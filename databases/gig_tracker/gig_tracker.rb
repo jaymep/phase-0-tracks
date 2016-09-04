@@ -43,6 +43,13 @@ def book_gig(db, date, time, venue_name, venue_address, phone_number, contact_na
   db.execute("INSERT INTO gig_tracker (date, time, venue_name, venue_address, phone_number, contact_name, fee, deposit_paid, notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [date, time, venue_name, venue_address, phone_number, contact_name, fee, deposit_paid, notes])
 end
 
+def change_gig(db, id, field, new_value)
+  db.execute("UPDATE gig_tracker SET ? = ? WHERE id = ?", [field, new_value, id])
+end
+
+def list_gigs
+  db.execute("SELECT * FROM gig_tracker")
+
 potential_notes = ["style: Gypsy", "style: Turkish", "style: Egyptian", "style: American Cabaret", "style: Persian", "style: Tribal Fusion", "style: Latin Fusion", "props: finger cymbals", "props: rectangular veil", "props: half-circle veil", "props: veil fans", "props: sword", "props: cane", "props: candle", "event: Wedding", "event: Rehearsal Dinner", "event: Bachelorette Party", "event: Birthday", "event: Bar Mitzvah/Bat Mitzvah", "event: Sweet 16th", "event: Corporate event", "event: Staff Party", "event: Business Function", "event: Convention", "event: Bridal Shower", "event: Baby Shower", "event: Anniversary", "event: Resort/Hotel Party", "event: Theme party", "event: Senior Home event", "event: Educational event", "event: Promotional event", "event: Grand Openings", "event: Fundraiser", "event: Art Shows", "event: Housewarming", "event: Graduation", "event: Christmas Party", "event: New Year's Party", "outfit: black", "outfit: white", "outfit: blue", "outfit: red", "outfit: green", "outfit: gold", "outfit: silver", "outfit: pink", "outfit: purple", "outfit: burgundy"]
 
 potential_times = %w[1pm 2pm 3pm 4pm 5pm 6pm 7pm 8pm 9pm 11am 12pm]
@@ -115,9 +122,9 @@ until response == "Quit" || response == "quit"
     field = gets.chomp
     p "What should it be now?"
     new_value = gets.chomp
-    
+    change_gig(db, id, field, new_value)
   elsif "List your bookings".include? response
-    p ""
+    p 
   elsif "Quit".include? response
     p "Thank you!"
   else
@@ -129,4 +136,5 @@ until response == "Quit" || response == "quit"
     puts "List your bookings"
     puts "Quit"
   end
+  p "Thank you!"
 end
