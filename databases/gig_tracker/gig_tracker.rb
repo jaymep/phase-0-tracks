@@ -38,10 +38,41 @@ def add_performance(db, date, venue, fee)
   db.execute("INSERT INTO performances (date, venue, fee) VALUES (?, ?, ?)", [date, venue, fee])
 end
 
+# update performance
+def update_performance(db, id, field, new_value)
+  update_perf = <<-UPDATE
+  UPDATE performances SET #{field} = #{new_value} WHERE id = #{id}
+  UPDATE
+  db.execute(update_perf)
+end
 
 
 
-# Try a smaller scale of this (below) as proof of concept
+
+# update single record
+# update_performance(db, 26, "fee", 300)
+
+# add single performance
+# add_performance(db, "2016-09-24", "Zaytoon", 250)
+
+# mass create records -- past and future
+# 20.times do
+#   add_performance(db, Faker::Date.backward(180).to_s, Faker::Company.name, rand(250..500))
+# end
+# 10.times do
+#   add_performance(db, Faker::Date.forward(90).to_s, Faker::Company.name, rand(250..500))
+# end
+
+
+
+
+
+
+
+
+#
+#
+# Try a smaller (more nimble) scale of table below 
 # create_table = <<-SQL
 #   CREATE TABLE IF NOT EXISTS gig_tracker(
 #   id INTEGER PRIMARY KEY,
@@ -66,7 +97,7 @@ end
 # def change_gig(db, field, new_value, gig_id)
 #   update_gig =  <<-SQL
 #   UPDATE gig_tracker SET #{field} = #{new_value} WHERE id = #{gig_id};
-#   )
+#   SQL
 #   db.execute(db, update_gig)
 # end
 
