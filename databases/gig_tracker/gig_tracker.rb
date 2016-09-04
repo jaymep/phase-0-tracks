@@ -1,6 +1,6 @@
 # GIG TRACKING
-# Create a database to track bellydance things
-# Create a table to track past and future gigs
+  # Create a database to track bellydance things
+  # Create a table to track past and future gigs
 # Allow user to modify a gig entry
 # Allow user to create a gig entry
 # Allow user to print a sorted list of gigs
@@ -47,17 +47,86 @@ potential_notes = ["style: Gypsy", "style: Turkish", "style: Egyptian", "style: 
 
 potential_times = %w[1pm 2pm 3pm 4pm 5pm 6pm 7pm 8pm 9pm 11am 12pm]
 
+# Create performance history
 # 20.times do
-  book_gig(
-    db, 
-    Faker::Date.backward(180).to_s,
-    potential_times.sample, 
-    Faker::Company.name, 
-    Faker::Address.street_address, 
-    Faker::PhoneNumber.phone_number, 
-    Faker::Name.name, 
-    rand(250-500), 
-    [true, false].sample.to_s, 
-    potential_notes.sample
-    )
+#   book_gig(
+#     db, 
+#     Faker::Date.backward(180).to_s,
+#     potential_times.sample, 
+#     Faker::Company.name, 
+#     Faker::Address.street_address, 
+#     Faker::PhoneNumber.phone_number, 
+#     Faker::Name.name, 
+#     rand(250..500), 
+#     [true, false].sample.to_s, 
+#     potential_notes.sample
+#     )
 # end
+
+# Create future bookings
+# 10.times do
+#   book_gig(
+#     db, 
+#     Faker::Date.forward(90).to_s,
+#     potential_times.sample, 
+#     Faker::Company.name, 
+#     Faker::Address.street_address, 
+#     Faker::PhoneNumber.phone_number, 
+#     Faker::Name.name, 
+#     rand(250..500), 
+#     [true, false].sample.to_s, 
+#     potential_notes.sample
+#     )
+# end
+
+puts "What would you like to do? (Just enter the first word of your choice.)"
+puts "Add a booking"
+puts "Change a booking"
+puts "List your bookings"
+puts "Quit"
+
+response = gets.chomp.capitalize 
+
+until response == "Quit" || response == "quit"
+  if "Add a booking".include? response
+    p "When is the gig? (yyyy-mm-dd)"
+    date = gets.chomp
+    p "When does the gig start? (Ex. 6pm)"
+    time = gets.chomp
+    p "Where will it be?"
+    venue_name = gets.chomp
+    p "What is the address?"
+    venue_address = gets.chomp
+    p "Who is your point of contact?"
+    contact_name = gets.chomp
+    p "What is his/her phone number?"
+    phone_number = gets.chomp
+    p "What is the agreed upon performance fee?"
+    fee = gets.chomp.to_i
+    p "Does a deposit need to be paid? (true/false)"
+    deposit_paid = gets.chomp
+    p "Any notes to keep in mind?"
+    notes = gets.chomp
+    book_gig(db, date, time, venue_name, venue_address, phone_number, contact_name, fee, deposit_paid, notes)
+  elsif "Change a booking".include? response
+    p "Which gig are you changing? (Enter id)"
+    id = gets.to_i
+    p "What has changed? (date, time, venue_name, venue_address, phone_number, contact_name, fee, deposit_paid, notes)"
+    field = gets.chomp
+    p "What should it be now?"
+    new_value = gets.chomp
+    
+  elsif "List your bookings".include? response
+    p ""
+  elsif "Quit".include? response
+    p "Thank you!"
+  else
+    puts "Response unclear. Please try again."
+    puts ""
+    puts "What would you like to do?"
+    puts "Add a booking"
+    puts "Change a booking"
+    puts "List your bookings"
+    puts "Quit"
+  end
+end
