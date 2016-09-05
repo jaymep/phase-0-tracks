@@ -20,7 +20,7 @@ require 'faker'
 
 # create SQLite3 database
 db = SQLite3::Database.new("bellydance.db")
-db.results_as_hash = true
+# db.results_as_hash = true
 
 create_table = <<-SQL
   CREATE TABLE IF NOT EXISTS performances(
@@ -49,17 +49,20 @@ end
 # retrieve performance lists
 def get_list(db, field)
   list_shows = <<-LIST
-  SELECT * FROM performances ORDER BY #{field}
-  
+  SELECT date, venue, fee FROM performances ORDER BY #{field}
   LIST
   list_set = db.execute(list_shows)
-  # prints as an array of hashes, need to work on output format
-  # can also use -- SELECT date, venue, fee FROM performances ORDER BY #{field}
-  puts list_set
+  puts "Performances"
+  puts ""
+  list_set.each do |date, venue, fee|
+    puts "Date: #{date}    Venue: #{venue}    Fee: $#{fee}"
+  end
 end
 
+
+
 # print list sorted by date, venue or performance fee
-# get_list(db, "date")
+get_list(db, "date")
 # get_list(db, "venue")
 # get_list(db, "fee")
 
@@ -78,15 +81,15 @@ end
 # end
 
 
+# SELECT * FROM performances ORDER BY #{field}
 
 
 
 
 
-
+# Expansion: inventory tables, music/playlist tables, venues & contact table
 #
-#
-# Try a smaller (more nimble) scale of table below 
+# Try a smaller (more nimble) scale of table below for assignment
 # create_table = <<-SQL
 #   CREATE TABLE IF NOT EXISTS gig_tracker(
 #   id INTEGER PRIMARY KEY,
