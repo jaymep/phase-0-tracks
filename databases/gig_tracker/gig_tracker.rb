@@ -1,16 +1,22 @@
-# GIG TRACKING (3/5 complete)
+# GIG TRACKING (5/5 complete -- Huzzah!)
   # Create a database to track bellydance things
   # Create a table to track past and future gigs
-# Allow user to modify a gig entry
+  # Allow user to modify a gig entry
   # Allow user to create a gig entry
-# Allow user to print a (sorted) list of gigs
+  # Allow user to print a (sorted) list of gigs
 
-# BONUS: (as in, if time allows)
+# USER INTERFACE (0/4)
+#   Ask user which action is desired
+#   Ask user for more data if needed
+#   Perform requested actions
+#   Print confirmation for user
+
+# BONUS: (as in, if time allows or after Phase 0)
 #   Allow user to generate report of performance fees earned
 #     in total
 #     per venue
 #     per specified period
-#   Add tables; complexity to database
+#   Add tables; complexity to database (see notes text file)
 
 # require gems for database and data generation
 # pass db variable into each method or change its scope
@@ -20,7 +26,7 @@ require 'faker'
 
 # create SQLite3 database
 db = SQLite3::Database.new("bellydance.db")
-# db.results_as_hash = true
+# db.results_as_hash = true # removed to clean uputs print output
 
 create_table = <<-SQL
   CREATE TABLE IF NOT EXISTS performances(
@@ -59,10 +65,47 @@ def get_list(db, field)
   end
 end
 
+# Can print prompt and not receive response, or wait for response before printing prompt
 
+puts "Hello! What would you like to do today?\n'Add' a performance\n'Update' a performance\n'List' your performances\n'Quit'"
+response = gets.chomp.capitalize
 
+until response == "Quit" || response == "quit"
+  if "Add a booking".include? response
+    puts "When is the performance? (yyyy-mm-dd)"
+    date = gets.chomp
+    puts "Where will it be?"
+    venue = gets.chomp
+    puts "What is the agreed upon performance fee?"
+    fee = gets.chomp.to_i
+    add_performance(db, date, venue, fee)
+  elsif "Update a performance".include? response
+    puts "Which performance are you updating? (Enter id)"
+    id = gets.to_i
+    puts "What has changed? (date, venue, fee)"
+    field = gets.chomp
+    puts "What should it be now?"
+    new_value = gets.chomp
+    update_performance(db, id, field, new_value)
+  elsif "List your bookings".include? response
+    puts "How would you like your list sorted? (date, venue, fee)"
+    sort_by = gets.chomp
+    get_list(db, sort_by)
+  elsif "Quit".include? response
+    puts "Thank you!"
+  else
+    puts "Response unclear. Please try again."
+    puts ""
+  end
+    puts "Hello! What would you like to do today?\n'Add' a performance\n'Update' a performance\n'List' your performances\n'Quit'"
+    response = gets.chomp.capitalize
+
+end
+
+  puts "Thank you!"
+  
 # print list sorted by date, venue or performance fee
-get_list(db, "date")
+# get_list(db, "date")
 # get_list(db, "venue")
 # get_list(db, "fee")
 
@@ -81,7 +124,7 @@ get_list(db, "date")
 # end
 
 
-# SELECT * FROM performances ORDER BY #{field}
+
 
 
 
@@ -105,45 +148,10 @@ get_list(db, "date")
 #   )
 # SQL
 
-# db.execute(create_table)
-
-# def book_gig(db, date, time, venue_name, venue_address, phone_number, contact_name, fee, deposit_paid, notes)
-#   db.execute("INSERT INTO gig_tracker (date, time, venue_name, venue_address, phone_number, contact_name, fee, deposit_paid, notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);", [date, time, venue_name, venue_address, phone_number, contact_name, fee, deposit_paid, notes])
-# end
-
-# def change_gig(db, field, new_value, gig_id)
-#   update_gig =  <<-SQL
-#   UPDATE gig_tracker SET #{field} = #{new_value} WHERE id = #{gig_id};
-#   SQL
-#   db.execute(db, update_gig)
-# end
-
-# change_gig(db, 33, "time", "6pm")
-
-
-# def list_gigs
-#   db.execute("SELECT * FROM gig_tracker;")
-# end
 
 # potential_notes = ["style: Gypsy", "style: Turkish", "style: Egyptian", "style: American Cabaret", "style: Persian", "style: Tribal Fusion", "style: Latin Fusion", "props: finger cymbals", "props: rectangular veil", "props: half-circle veil", "props: veil fans", "props: sword", "props: cane", "props: candle", "event: Wedding", "event: Rehearsal Dinner", "event: Bachelorette Party", "event: Birthday", "event: Bar Mitzvah/Bat Mitzvah", "event: Sweet 16th", "event: Corporate event", "event: Staff Party", "event: Business Function", "event: Convention", "event: Bridal Shower", "event: Baby Shower", "event: Anniversary", "event: Resort/Hotel Party", "event: Theme party", "event: Senior Home event", "event: Educational event", "event: Promotional event", "event: Grand Openings", "event: Fundraiser", "event: Art Shows", "event: Housewarming", "event: Graduation", "event: Christmas Party", "event: New Year's Party", "outfit: black", "outfit: white", "outfit: blue", "outfit: red", "outfit: green", "outfit: gold", "outfit: silver", "outfit: pink", "outfit: purple", "outfit: burgundy"]
 
 # potential_times = %w[1pm 2pm 3pm 4pm 5pm 6pm 7pm 8pm 9pm 11am 12pm]
-
-# Create performance history
-# 20.times do
-#   book_gig(
-#     db, 
-#     Faker::Date.backward(180).to_s,
-#     potential_times.sample, 
-#     Faker::Company.name, 
-#     Faker::Address.street_address, 
-#     Faker::PhoneNumber.phone_number, 
-#     Faker::Name.name, 
-#     rand(250..500), 
-#     [true, false].sample.to_s, 
-#     potential_notes.sample
-#     )
-# end
 
 # Create future bookings
 # 10.times do
@@ -161,57 +169,5 @@ get_list(db, "date")
 #     )
 # end
 
-# puts "What would you like to do? (Just enter the first word of your choice.)"
-# puts "Add a booking"
-# puts "Change a booking"
-# puts "List your bookings"
-# puts "Quit"
 
-# response = gets.chomp.capitalize 
-
-# until response == "Quit" || response == "quit"
-#   if "Add a booking".include? response
-#     p "When is the gig? (yyyy-mm-dd)"
-#     date = gets.chomp
-#     p "When does the gig start? (Ex. 6pm)"
-#     time = gets.chomp
-#     p "Where will it be?"
-#     venue_name = gets.chomp
-#     p "What is the address?"
-#     venue_address = gets.chomp
-#     p "Who is your point of contact?"
-#     contact_name = gets.chomp
-#     p "What is his/her phone number?"
-#     phone_number = gets.chomp
-#     p "What is the agreed upon performance fee?"
-#     fee = gets.chomp.to_i
-#     p "Does a deposit need to be paid? (true/false)"
-#     deposit_paid = gets.chomp
-#     p "Any notes to keep in mind?"
-#     notes = gets.chomp
-#     book_gig(db, date, time, venue_name, venue_address, phone_number, contact_name, fee, deposit_paid, notes)
-#   elsif "Change a booking".include? response
-#     p "Which gig are you changing? (Enter id)"
-#     id = gets.to_i
-#     p "What has changed? (date, time, venue_name, venue_address, phone_number, contact_name, fee, deposit_paid, notes)"
-#     field = gets.chomp
-#     p "What should it be now?"
-#     new_value = gets.chomp
-#     change_gig(db, gig_id, field, new_value)
-#   elsif "List your bookings".include? response
-#     p 
-#   elsif "Quit".include? response
-#     p "Thank you!"
-#   else
-#     puts "Response unclear. Please try again."
-#     puts ""
-#     puts "What would you like to do?"
-#     puts "Add a booking"
-#     puts "Change a booking"
-#     puts "List your bookings"
-#     puts "Quit"
-#   end
-#   p "Thank you!"
-# end
-
-# p list_gigs(db)
+# puts list_gigs(db)
