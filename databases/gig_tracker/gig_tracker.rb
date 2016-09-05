@@ -23,7 +23,7 @@
 
 require 'sqlite3'
 require 'faker'
-require_relative 'performances'
+# require_relative 'performances'
 
 # create SQLite3 database
 db = SQLite3::Database.new("bellydance.db")
@@ -66,50 +66,51 @@ def get_list(db, field)
   end
 end
 
-# # This user interface works on its own in repl, but added here it won't run properly from the terminal. New records are created with incorrect values.
-# puts "Hello! What would you like to do today?\n'Add' a performance\n'Update' a performance\n'List' your performances\n'Quit'"
-# response = gets.chomp.capitalize
-# p response
+# response methods (refactor/will interface work?)
+def adding(db)
+  puts "When is the performance? (yyyy-mm-dd)"
+  date = gets.chomp
+  puts "Where will it be?"
+  venue = gets.chomp.capitalize
+  puts "What is the agreed upon performance fee?"
+  fee = gets.chomp.to_i
+  add_performance(db, date, venue, fee)
+end
 
-# until response == "Quit" || response == "quit"
-#   if "Add a booking".include? response
-#     puts "When is the performance? (yyyy-mm-dd)"
-#     date = gets.chomp
-#     p date
-#     puts "Where will it be?"
-#     venue = gets.chomp
-#     p venue
-#     puts "What is the agreed upon performance fee?"
-#     fee = gets.chomp.to_i
-#     p fee
-#     add_performance(db, date, venue, fee)
-#   elsif "Update a performance".include? response
-#     puts "Which performance are you updating? (Enter id)"
-#     id = gets.to_i
-#     p id
-#     puts "What has changed? (date, venue, fee)"
-#     field = gets.chomp
-#     p field
-#     puts "What should it be now?"
-#     new_value = gets.chomp
-#     p new_value
-#     update_performance(db, id, field, new_value)
-#   elsif "List your bookings".include? response
-#     puts "How would you like your list sorted? (date, venue, fee)"
-#     sort_by = gets.chomp
-#     p sort_by
-#     get_list(db, sort_by)
-#   elsif "Quit".include? response
-#     puts "Thank you!"
-#   else
-#     puts "Response unclear. Please try again."
-#     puts ""
-#   end
-#     puts "Hello! What would you like to do today?\n'Add' a performance\n'Update' a performance\n'List' your performances\n'Quit'"
-#     response = gets.chomp.capitalize
-# end
+def updating(db)
+  puts "When is the performance? (yyyy-mm-dd)"
+  puts "Which performance are you updating? (Enter id)"
+  id = gets.to_i
+  puts "What has changed? (date, venue, fee)"
+  field = gets.chomp
+  puts "What should it be now?"
+  new_value = gets.chomp
+  update_performance(db, id, field, new_value)
+end
 
-#   puts "Thank you!"
+puts "Hello! What would you like to do today?\n'Add' a performance\n'Update' a performance\n'List' your performances\n'Quit'"
+response = gets.chomp.capitalize
+
+
+until response == "Quit" || response == "quit"
+  if "Add a booking".include? response
+    adding(db)
+  elsif "Update a performance".include? response
+    updating(db)
+  elsif "List your bookings".include? response
+    puts "How would you like your list sorted? (date, venue, fee)"
+    sort_by = gets.chomp
+    get_list(db, sort_by)
+  elsif "Quit".include? response
+    puts "Thank you!"
+  else
+    puts "Response unclear. Please try again."
+    puts ""
+  end
+    puts "Hello! What would you like to do today?\n'Add' a performance\n'Update' a performance\n'List' your performances\n'Quit'"
+    response = gets.chomp.capitalize
+end
+  puts "Thank you!"
 
 
 # DRIVER CODE
@@ -141,7 +142,7 @@ end
 # ==========
 # Expansion: inventory tables, music/playlist tables, venues & contact table
 #
-# Try a smaller (more nimble) scale of table below for assignment
+# Try a smaller (more nimble) scale of table below for assignment/proof of concept
 # create_table = <<-SQL
 #   CREATE TABLE IF NOT EXISTS gig_tracker(
 #   id INTEGER PRIMARY KEY,
