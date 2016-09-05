@@ -56,38 +56,40 @@ end
 # retrieve performance lists
 def get_list(db, field)
   list_shows = <<-LIST
-  SELECT date, venue, fee FROM performances ORDER BY #{field}
+  SELECT id, date, venue, fee FROM performances ORDER BY #{field}
   LIST
   list_set = db.execute(list_shows)
   puts "Performances"
   puts ""
-  list_set.each do |date, venue, fee|
-    puts "Date: #{date}    Fee: $#{fee}    Venue: #{venue}"
+  list_set.each do |id, date, venue, fee|
+    puts "ID: #{id}    Date: #{date}    Fee: $#{fee}    Venue: #{venue}"
   end
 end
 
-# response methods (refactor/will interface work?)
+# response methods (refactor)
 def adding(db)
   puts "When is the performance? (yyyy-mm-dd)"
   date = gets.chomp
   puts "Where will it be?"
-  venue = gets.chomp.capitalize
+  venue = gets.chomp
   puts "What is the agreed upon performance fee?"
   fee = gets.chomp.to_i
   add_performance(db, date, venue, fee)
+  puts "\nPerformance added.\n"
 end
 
 def updating(db)
-  puts "Which performance are you updating? (Enter id)"
+  puts "\nWhich performance are you updating? (Enter id)"
   id = gets.to_i
-  puts "What has changed? (date, venue, fee)"
+  puts "\nWhat has changed? (date, venue, fee)"
   field = gets.chomp
-  puts "What should it be now? ("yyyy-mm-dd", "venue", fee)"
+  puts "\nWhat should it be now? (\"yyyy-mm-dd\", \"venue\", fee)"
   new_value = gets.chomp.to_s
   update_performance(db, id, field, new_value)
+  puts "\nPerformance updated.\n"
 end
 
-puts "Hello! What would you like to do today?\n'Add' a performance\n'Update' a performance\n'List' your performances\n'Quit'"
+puts "Hello! What would you like to do today?\n'Add' a performance\n'Update' a performance\n'List' your performances\n'Quit'\n"
 response = gets.chomp.capitalize
 
 
@@ -97,19 +99,19 @@ until response == "Quit" || response == "quit"
   elsif "Update a performance".include? response
     updating(db)
   elsif "List your bookings".include? response
-    puts "How would you like your list sorted? (date, venue, fee)"
+    puts "\nHow would you like your list sorted? (date, venue, fee)"
     sort_by = gets.chomp
     get_list(db, sort_by)
-  elsif "Quit".include? response
-    puts "Thank you!"
-  else
-    puts "Response unclear. Please try again."
     puts ""
+  elsif "Quit".include? response
+    puts "\nThank you!"
+  else
+    puts "\nResponse unclear. Please try again.\n"
   end
-    puts "Hello! What would you like to do today?\n'Add' a performance\n'Update' a performance\n'List' your performances\n'Quit'"
+    puts "\nHello! What would you like to do today?\n'Add' a performance\n'Update' a performance\n'List' your performances\n'Quit'\n"
     response = gets.chomp.capitalize
 end
-  puts "Thank you!"
+  puts "\nThank you!"
 
 
 # DRIVER CODE
