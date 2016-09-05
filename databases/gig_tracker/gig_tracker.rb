@@ -46,8 +46,22 @@ def update_performance(db, id, field, new_value)
   db.execute(update_perf)
 end
 
+# retrieve performance lists
+def get_list(db, field)
+  list_shows = <<-LIST
+  SELECT * FROM performances ORDER BY #{field}
+  
+  LIST
+  list_set = db.execute(list_shows)
+  # prints as an array of hashes, need to work on output format
+  # can also use -- SELECT date, venue, fee FROM performances ORDER BY #{field}
+  puts list_set
+end
 
-
+# print list sorted by date, venue or performance fee
+# get_list(db, "date")
+# get_list(db, "venue")
+# get_list(db, "fee")
 
 # update single record
 # update_performance(db, 26, "fee", 300)
