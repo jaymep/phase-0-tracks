@@ -62,7 +62,7 @@ def get_list(db, field)
   puts "Performances"
   puts ""
   list_set.each do |date, venue, fee|
-    puts "Date: #{date}    Venue: #{venue}    Fee: $#{fee}"
+    puts "Date: #{date}    Fee: $#{fee}    Venue: #{venue}"
   end
 end
 
@@ -78,13 +78,12 @@ def adding(db)
 end
 
 def updating(db)
-  puts "When is the performance? (yyyy-mm-dd)"
   puts "Which performance are you updating? (Enter id)"
   id = gets.to_i
   puts "What has changed? (date, venue, fee)"
   field = gets.chomp
-  puts "What should it be now?"
-  new_value = gets.chomp
+  puts "What should it be now? ("yyyy-mm-dd", "venue", fee)"
+  new_value = gets.chomp.to_s
   update_performance(db, id, field, new_value)
 end
 
