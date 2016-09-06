@@ -11,7 +11,8 @@
 Codes found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status "Mozilla Developer Network")
 
 ### What is the difference between a GET request and a POST request? When might each be used?
-* GET only requests data from a server while POST also sends data with its request. For example, typing http://mail.google.com into a browser address bar will send a GET request, logging in to that website with a user name and password will send a POST request.
+* GET only requests data from a server while POST also sends data with its request. 
+* For example, typing http://mail.google.com into a browser address bar will send a GET request to display the website, logging in to that website with a user name and password will send a POST request to access the email.
 
 ### What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?
 * It's a tiny piece of data sent by a web server to a user's browser. Cookies are used to store information like online shopping carts, user information (name, password, address, credit card), log in status, and browser history.
