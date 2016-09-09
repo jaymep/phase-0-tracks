@@ -15,6 +15,11 @@
 ## Release 1: Study Up
 ### LEARN THE THING (2 HOURS MAX)
 Time to execute your plan. Aaaand ... go! When the time is up, record in notes.md which strategies seemed to be the most effective.
+#### Super-effective!
+* Start small and then build upon that. Get > change > save > special effects
+* Combine reading with tutorials & example code to read, but save your time by only working out the tutorials that pique your interest or do not make sense the first time around.
+* Take breaks! I have to refresh the page to try a new tutorial, so why not refresh myself with some stretching and water?
+* Learning for the sake of learning. Less pressure, more enthusiasm!
 
 ## Release 2: Make a Thing
 ### DO THE THING (45 MINUTES MAX)
