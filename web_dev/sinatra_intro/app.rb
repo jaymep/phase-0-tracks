@@ -70,3 +70,16 @@ end
 get '/:number_1/add/:number_2' do
   "#{params[:number_1]} plus #{params[:number_2]} equals " + (params[:number_1].to_i + params[:number_2].to_i).to_s
 end
+
+# Optional bonus: Make a route that allows the user to search the database in some way -- maybe for students who have a certain first name, or some other attribute. If you like, you can simply modify the home page to take a query parameter, and filter the students displayed if a query parameter is present.
+get '/enrollment/:campus' do
+  students = db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]])
+  response = ""
+  students.each do |student|
+    response << "ID: #{student['id']}<br>"
+    response << "Name: #{student['name']}<br>"
+    response << "Age: #{student['age']}<br>"
+    response << "Campus: #{student['campus']}<br><br>"
+  end
+  response
+end
