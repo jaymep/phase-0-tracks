@@ -21,24 +21,24 @@ function votelizard(event) {
   var photoLizard = document.getElementById("lizard-photo");
   console.log("click happened! here's the click event:");
   console.log(event);
-  votelizard.style.height = "auto";
-  votelizard.style.width = "400px";
+  photoLizard.style.height = "auto";
+  photoLizard.style.width = "400px";
 }
 
 function voteiguana(event) {
   var photoIguana = document.getElementById("iguana-photo");
   console.log("click happened! here's the click event:");
   console.log(event);
-  voteiguana.style.height = "auto";
-  voteiguana.style.width = "400px";
+  photoIguana.style.height = "auto";
+  photoIguana.style.width = "400px";
 }
 
 function votebobolink(event) {
   var photoBobolink = document.getElementById("bobolink-photo");
   console.log("click happened! here's the click event:");
   console.log(event);
-  votebobolink.style.height = "auto";
-  votebobolink.style.width = "400px";
+  photoBobolink.style.height = "auto";
+  photoBobolink.style.width = "400px";
 }
 lizard.addEventListener("click", votelizard);
 iguana.addEventListener("click", voteiguana);
