@@ -1,6 +1,7 @@
 # require gems
 require 'sinatra'
 require 'sqlite3'
+require 'sinatra/reloader'
 
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
@@ -44,3 +45,21 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+get '/contact' do
+  "Dev Bootcamp\n
+  San Diego\n
+  707 Broadway\n
+  Suite 800\n
+  San Diego, CA 92101"
+end
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
+
