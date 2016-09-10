@@ -17,6 +17,16 @@ get '/students/new' do
   erb :new_student
 end
 
+get '/contact/new' do
+  @messages = db.execute("CREATE TABLE if not exists messages (name VARCHAR(255), email VARCHAR(255), messages VARCHAR(255))")
+  erb :contact
+end
+
+post '/contact' do
+  db.execute("INSERT INTO messages (name, email, messages) VALUES (?,?,?)", [params['name'], params['email'], params['messages']])
+  redirect '/'
+end
+
 # create new students via
 # a form
 post '/students' do
